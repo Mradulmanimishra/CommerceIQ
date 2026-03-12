@@ -5,6 +5,8 @@
 ![Plotly](https://img.shields.io/badge/Plotly.js-2.32-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge)
 
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-commerceiq--dashboard.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://commerceiq-dashboard.vercel.app/)
+
 > A full-stack e-commerce analytics platform that generates realistic Indian market data and visualises it through an interactive dark-themed dashboard. Built to demonstrate end-to-end data engineering, from synthetic data pipelines to production-quality BI visualisation.
 
 CommerceIQ combines a Python data generation engine with a self-contained HTML dashboard featuring 15+ interactive Plotly charts, real-time filtering, and AI-powered insight summaries — all running offline without any backend dependencies.
