@@ -1,0 +1,51 @@
+ProductID,Name,Category,Price,Cost,Stock,ReorderLevel
+PROD-001,Wireless Earbuds,Electronics,4713.31,2827.99,426.0,50.0
+PROD-002,Smartphone Case,,2197.08,1318.25,250.0,50.0
+PROD-003,USB-C Hub,Electronics,2845.14,1707.08,151.0,50.0
+PROD-004,Bluetooth Speaker,Electronics,5465.79,3279.47,179.0,50.0
+PROD-005,Power Bank 20000mAh,Electronics,4513.55,2708.13,,50.0
+PROD-006,LED Desk Lamp,Electronics,3868.84,2321.3,284.0,50.0
+PROD-007,Webcam HD,Electronics,5483.53,3290.12,149.0,50.0
+PROD-008,Mechanical Keyboard,Electronics,3320.58,1992.35,369.0,50.0
+PROD-009,Portable SSD 1TB,Electronics,5981.22,3588.73,454.0,50.0
+PROD-010,Smart Watch Band,Electronics,7853.25,4711.95,360.0,50.0
+PROD-011,Cotton Kurta,Apparel,627.06,376.24,117.0,50.0
+PROD-012,Denim Jeans,Apparel,2193.39,1316.03,62.0,50.0
+PROD-013,Polo T-Shirt,Apparel,2493.12,1495.87,48.0,50.0
+PROD-014,Running Shorts,Apparel,959.11,575.47,223.0,50.0
+PROD-015,Formal Blazer,Apparel,447.57,268.54,214.0,50.0
+PROD-016,Silk Saree,Apparel,1238.94,743.36,439.0,50.0
+PROD-017,Winter Jacket,Apparel,2275.72,1365.43,31.0,50.0
+PROD-018,Linen Shirt,Apparel,1330.11,798.07,304.0,50.0
+PROD-019,Track Pants,Apparel,380.41,228.25,285.0,50.0
+PROD-020,Cotton Dupatta,Apparel,2140.44,1284.26,18.0,50.0
+PROD-021,Stainless Steel Bottle,Home,444.56,266.74,77.0,50.0
+PROD-022,Ceramic Mug Set,Home,1870.93,1122.56,497.0,50.0
+PROD-023,Bedsheet 300TC,Home,1453.66,872.2,475.0,50.0
+PROD-024,Wall Clock Wooden,Home,1358.39,815.03,221.0,50.0
+PROD-025,Scented Candle Set,Home,1531.21,918.73,318.0,50.0
+PROD-026,Cushion Cover Pack,Home,526.56,315.94,263.0,50.0
+PROD-027,Kitchen Organizer,Home,2195.93,1317.56,358.0,50.0
+PROD-028,Door Mat Coir,Home,1957.14,1174.28,265.0,50.0
+PROD-029,Table Lamp Brass,Home,895.64,537.38,365.0,50.0
+PROD-030,Photo Frame Set,Home,1458.47,875.08,480.0,50.0
+PROD-031,Yoga Mat 6mm,Sports,355.85,213.51,475.0,50.0
+PROD-032,Resistance Bands Set,Sports,2147.54,1288.52,390.0,50.0
+PROD-033,Cricket Bat Kashmir,Sports,1749.63,1049.78,320.0,50.0
+PROD-034,Badminton Racquet,Sports,1513.79,908.27,322.0,50.0
+PROD-035,Dumbbell 5kg Pair,Sports,808.36,485.02,442.0,50.0
+PROD-036,Skipping Rope,Sports,1412.12,847.27,327.0,50.0
+PROD-037,Football Size 5,Sports,529.04,317.42,238.0,50.0
+PROD-038,Cycling Gloves,Sports,1552.78,931.67,50.0,50.0
+PROD-039,Gym Bag 40L,Sports,1736.04,1041.62,,50.0
+PROD-040,Swim Goggles,Sports,1885.79,1131.47,290.0,50.0
+PROD-041,Face Serum Vitamin C,Beauty,834.98,500.99,77.0,50.0
+PROD-042,Sunscreen SPF50,Beauty,1627.03,976.22,301.0,50.0
+PROD-043,Hair Oil Argan,Beauty,2126.48,1275.89,451.0,50.0
+PROD-044,Lipstick Matte Set,Beauty,2377.7,1426.62,181.0,50.0
+PROD-045,Face Wash Neem,Beauty,750.97,450.58,222.0,50.0
+PROD-046,Body Lotion 400ml,Beauty,1012.78,607.67,465.0,50.0
+PROD-047,Nail Polish Kit,Beauty,328.6,197.16,262.0,50.0
+PROD-048,Eye Cream Anti-Age,Beauty,1918.99,1151.39,84.0,50.0
+PROD-049,Sheet Mask Pack,Beauty,358.37,215.02,380.0,50.0
+PROD-050,Perfume 100ml,Beauty,2228.18,1336.91,284.0,50.0

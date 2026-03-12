@@ -1,0 +1,501 @@
+CustomerID,Name,City,State,Email,Segment,JoinDate
+CUST-0001,Aryan Maharaj,Kolkata,West Bengal,udantdewan@example.net,B2C,2020-07-06
+CUST-0002,Pahal Balay,Mumbai,Maharashtra,chandertejas@example.org,Enterprise,2022-07-11
+CUST-0003,Rushil Saini,Jaipur,Rajasthan,saumyamall@example.org,B2B,2023-10-17
+CUST-0004,Pahal Oak,Mumbai,Maharashtra,nachiket35@example.org,B2C,2020-06-18
+CUST-0005,Jagrati Padmanabhan,Chennai,Tamil Nadu,caleb78@example.org,B2C,2024-11-11
+CUST-0006,Farhan Memon,Hyderabad,Telangana,rehaan10@example.net,B2C,2021-02-20
+CUST-0007,Fariq Kaul,Nagpur,Maharashtra,raiarunima@example.com,B2C,2023-03-06
+CUST-0008,Nicholas Prabhakar,Bangalore,Karnataka,shaurya41@example.net,B2B,2023-03-05
+CUST-0009,Nihal Shere,Kolkata,West Bengal,omadan@example.net,B2B,2022-10-13
+CUST-0010,Daksh Karnik,Delhi,Delhi,muttinandini@example.com,B2B,2020-04-30
+CUST-0011,Simon Tata,Bangalore,Karnataka,jshanker@example.com,B2C,2020-09-11
+CUST-0012,Priya Rastogi,Chennai,Tamil Nadu,theodore28@example.com,Enterprise,2020-06-15
+CUST-0013,Imaran Dua,Jaipur,Rajasthan,pahalbhatt@example.com,B2B,2021-11-27
+CUST-0014,Zayan Apte,Delhi,Delhi,yadavamara@example.net,B2C,2021-09-13
+CUST-0015,Radhika Dugar,Lucknow,Uttar Pradesh,uaggarwal@example.net,B2C,2021-04-25
+CUST-0016,Yashica Cherian,Ahmedabad,Gujarat,yashica93@example.org,B2C,2021-11-13
+CUST-0017,Aadi Naik,Delhi,Delhi,hbahl@example.com,B2C,2024-05-23
+CUST-0018,Wriddhish Bhardwaj,Surat,Gujarat,farhanchada@example.net,B2C,2022-06-06
+CUST-0019,Jeremiah Dave,,Tamil Nadu,qgandhi@example.net,B2C,2024-05-12
+CUST-0020,Siddharth Zacharia,Pune,Maharashtra,devikarastogi@example.net,B2C,2023-04-01
+CUST-0021,Zansi Seth,Ahmedabad,Gujarat,kotaumang@example.org,B2B,2021-09-09
+CUST-0022,Thomas Amble,Mumbai,Maharashtra,bhargavaveer@example.org,B2C,2024-07-11
+CUST-0023,Ekavir Varkey,Kolkata,West Bengal,aryasunder@example.org,,2022-09-11
+CUST-0024,Xavier Solanki,Mumbai,Maharashtra,ggupta@example.org,B2C,2023-04-18
+CUST-0025,Pallavi Roy,Delhi,Delhi,rbhagat@example.net,B2C,2024-12-02
+CUST-0026,Darsh Rau,Mumbai,Maharashtra,ikbal33@example.org,B2B,2022-09-06
+CUST-0027,Pahal Goswami,Surat,Gujarat,turvi31@example.com,B2C,2024-01-15
+CUST-0028,Chandresh Zachariah,Chennai,Tamil Nadu,chanderwarjas@example.org,B2C,2022-01-12
+CUST-0029,Tanay Rattan,Lucknow,Uttar Pradesh,galaladli@example.org,B2C,2024-12-04
+CUST-0030,Suhani Mangal,Jaipur,Rajasthan,jsur@example.org,B2C,2021-06-25
+CUST-0031,Darsh Murthy,Kolkata,West Bengal,bedivansha@example.net,B2B,2024-08-05
+CUST-0032,Dakshesh Trivedi,Surat,Gujarat,grewalekapad@example.net,B2C,2020-05-04
+CUST-0033,Netra Dar,Surat,Gujarat,balveerbumb@example.com,B2C,2023-04-15
+CUST-0034,Advika Jayaraman,Mumbai,Maharashtra,william46@example.org,Enterprise,
+CUST-0035,Tanvi Mutti,,Maharashtra,andratara@example.net,Enterprise,2024-12-28
+CUST-0036,Ethan Yogi,Delhi,Delhi,yashawinilanka@example.org,B2B,2024-08-31
+CUST-0037,Yash Pingle,Jaipur,Rajasthan,nakul78@example.net,B2C,2021-07-06
+CUST-0038,Chandani Chawla,Bangalore,Karnataka,aishanidalia@example.org,B2C,2023-09-17
+CUST-0039,Anita Manda,Mumbai,Maharashtra,hemaljani@example.net,B2B,
+CUST-0040,Yashasvi Suresh,Chennai,Tamil Nadu,charan16@example.com,B2C,2020-03-21
+CUST-0041,Kalpit Lala,Pune,Maharashtra,riyasane@example.net,B2C,2020-01-18
+CUST-0042,Manthan Banik,Kolkata,West Bengal,manbir62@example.org,B2C,2021-07-16
+CUST-0043,Ishita Kade,Nagpur,Maharashtra,harshilpandya@example.net,B2C,2024-06-02
+CUST-0044,Mohammed Khalsa,Mumbai,Maharashtra,petersachar@example.org,Enterprise,2020-11-23
+CUST-0045,Nisha Kothari,Chennai,,nathaniel16@example.org,B2C,2024-04-16
+CUST-0046,Ryan Sharma,Chennai,Tamil Nadu,dalaja33@example.org,B2B,2023-04-20
+CUST-0047,Falguni Mallick,Kolkata,West Bengal,mallickindali@example.net,B2C,2022-07-19
+CUST-0048,Ayaan D’Alia,Bangalore,Karnataka,pranav94@example.org,B2C,2020-07-16
+CUST-0049,Hemani Murthy,Chennai,Tamil Nadu,hvaidya@example.com,B2C,2024-06-30
+CUST-0050,Aachal Basu,Pune,Maharashtra,hagarwal@example.net,B2C,2023-06-08
+CUST-0051,Januja Sankar,Chennai,Tamil Nadu,narayanandipta@example.net,Enterprise,2024-03-28
+CUST-0052,,Chennai,Tamil Nadu,znarain@example.net,,2021-06-23
+CUST-0053,Rehaan Salvi,Chennai,Tamil Nadu,nghosh@example.net,Enterprise,2021-07-03
+CUST-0054,Daksha Mangat,Lucknow,Uttar Pradesh,qushinagy@example.com,B2B,2022-03-17
+CUST-0055,Yasti Solanki,Lucknow,Uttar Pradesh,fradomander@example.net,B2C,2023-04-27
+CUST-0056,Girik Keer,Bangalore,Karnataka,umang32@example.org,Enterprise,2020-03-25
+CUST-0057,Elijah Shah,Mumbai,Maharashtra,thayer@example.net,B2C,2021-12-02
+CUST-0058,Yagnesh Divan,Chennai,Tamil Nadu,chhabrapavani@example.org,B2C,2020-11-17
+CUST-0059,Chandresh Krish,Jaipur,Rajasthan,shankiaan@example.com,B2C,2023-05-03
+CUST-0060,Saanvi Thaman,Mumbai,Maharashtra,ksehgal@example.net,B2C,2024-04-22
+CUST-0061,Aashi Kota,Bangalore,Karnataka,vedhika34@example.com,B2C,2020-05-21
+CUST-0062,Wahab Magar,Hyderabad,Telangana,ekaja81@example.org,B2C,2020-10-02
+CUST-0063,Michael Kala,Mumbai,Maharashtra,sachdevanikita@example.com,B2B,2022-09-17
+CUST-0064,David Jhaveri,Mumbai,Maharashtra,xramachandran@example.net,B2C,2024-09-23
+CUST-0065,Lajita Sood,Ahmedabad,Gujarat,pandeychanchal@example.com,B2C,2024-04-07
+CUST-0066,Thomas Sura,Delhi,Delhi,anjalisarin@example.com,B2C,2020-02-22
+CUST-0067,Nidhi Gandhi,Nagpur,Maharashtra,ndatta@example.net,B2C,2020-02-19
+CUST-0068,Avi Chacko,Ahmedabad,Gujarat,,B2B,2020-04-01
+CUST-0069,Falak Kakar,Pune,Maharashtra,vnarain@example.com,B2C,2021-05-23
+CUST-0070,Zayyan Bumb,Lucknow,Uttar Pradesh,vbahl@example.net,Enterprise,2020-04-05
+CUST-0071,Udarsh Biswas,Lucknow,Uttar Pradesh,balasubramanianyug@example.org,B2B,
+CUST-0072,William Date,Delhi,Delhi,kcontractor@example.org,B2C,2022-04-29
+CUST-0073,Jyoti Ganesh,Kolkata,West Bengal,gadedeepa@example.org,B2C,2022-11-22
+CUST-0074,Keya Ranganathan,Kolkata,West Bengal,faqidkibe@example.org,B2B,2023-06-27
+CUST-0075,Jai Barman,Bangalore,Karnataka,priya51@example.net,B2B,2023-03-28
+CUST-0076,Osha Suri,Surat,Gujarat,santjanaki@example.net,B2B,2024-06-16
+CUST-0077,Michael Saran,Delhi,Delhi,anamikayohannan@example.com,B2B,2022-04-28
+CUST-0078,Ekantika Korpal,Nagpur,Maharashtra,mallickshravya@example.org,B2C,2023-10-02
+CUST-0079,Gayathri Balakrishnan,Mumbai,Maharashtra,lnair@example.com,B2C,2021-01-22
+CUST-0080,Harini Mammen,Kolkata,West Bengal,advaith83@example.org,B2C,2021-03-16
+CUST-0081,Vrinda Khosla,Nagpur,Maharashtra,cswaminathan@example.org,B2B,2020-06-18
+CUST-0082,Nidhi Kohli,Chennai,Tamil Nadu,jyoti78@example.net,B2B,2021-09-19
+CUST-0083,Indira Setty,Surat,Gujarat,damini43@example.org,B2C,2023-08-10
+CUST-0084,Jagdish Wason,Jaipur,Rajasthan,rehaankalita@example.net,B2C,2022-06-03
+CUST-0085,Harish Hari,Mumbai,Maharashtra,utkarsh52@example.com,B2C,
+CUST-0086,Anusha Bath,Pune,Maharashtra,masterjonathan@example.net,B2C,2024-05-04
+CUST-0087,Harshil Arora,Chennai,Tamil Nadu,upasna77@example.com,B2B,2020-12-02
+CUST-0088,Zayyan Sridhar,Chennai,Tamil Nadu,bhattacharyyanandini@example.com,B2B,2020-05-15
+CUST-0089,Max Dixit,Delhi,Delhi,frederick31@example.net,B2B,2023-10-27
+CUST-0090,Lajita Seshadri,Surat,Gujarat,lmishra@example.com,B2C,2021-07-11
+CUST-0091,Hardik Johal,Bangalore,Karnataka,aishanibumb@example.org,B2C,2021-03-13
+CUST-0092,Naksh Agate,Pune,Maharashtra,sseshadri@example.net,B2B,2022-05-08
+CUST-0093,Vincent Mani,Kolkata,West Bengal,sudiksha13@example.com,B2B,2023-12-09
+CUST-0094,Pavani Contractor,Nagpur,Maharashtra,manthanlata@example.org,B2C,2020-05-10
+CUST-0095,Damyanti Mani,,Delhi,ddash@example.net,B2B,2021-07-09
+CUST-0096,Anita Tella,Kolkata,West Bengal,fsarma@example.net,B2C,2020-03-13
+CUST-0097,Ekantika Krishna,Delhi,Delhi,chandveer@example.net,B2C,2024-03-06
+CUST-0098,Amruta Baria,Delhi,Delhi,upmavenkataraman@example.net,B2C,2022-03-18
+CUST-0099,Pratyush Sarin,Delhi,Delhi,echand@example.com,B2C,2022-01-15
+CUST-0100,Henry Dyal,Surat,Gujarat,nisha74@example.net,B2C,2024-09-21
+CUST-0101,Suhani Chakrabarti,Bangalore,,zayyan51@example.com,B2C,2024-04-28
+CUST-0102,Turvi Sachdev,Delhi,Delhi,guhazarna@example.com,B2B,2023-02-10
+CUST-0103,Riya Behl,Hyderabad,Telangana,amaradeep@example.com,B2C,2022-03-10
+CUST-0104,Jairaj Balakrishnan,Jaipur,Rajasthan,nathanmukhopadhyay@example.net,B2C,2020-01-25
+CUST-0105,Girik Kar,Kolkata,West Bengal,shenoyjacob@example.net,Enterprise,2024-02-28
+CUST-0106,Bishakha Upadhyay,Mumbai,Maharashtra,ojasvi77@example.org,B2C,2022-04-14
+CUST-0107,Leela Halder,Ahmedabad,Gujarat,ekarajmajumdar@example.com,B2C,2021-09-12
+CUST-0108,Aarnav Mandal,Nagpur,Maharashtra,vrishti27@example.net,B2B,2022-06-03
+CUST-0109,Krishna Shah,Pune,Maharashtra,ranbir39@example.com,B2C,2021-03-02
+CUST-0110,Caleb Nadkarni,Lucknow,Uttar Pradesh,yraj@example.net,B2C,2023-12-17
+CUST-0111,Warhi Bansal,Bangalore,Karnataka,yadavinarula@example.org,B2C,2024-05-15
+CUST-0112,Harish Vora,Mumbai,Maharashtra,uaurora@example.org,B2C,2022-01-18
+CUST-0113,Falan Singh,Chennai,Tamil Nadu,hamsini96@example.net,Enterprise,2020-05-26
+CUST-0114,Lajita Nadig,Hyderabad,Telangana,nbanik@example.org,B2B,2021-03-04
+CUST-0115,Utkarsh Chana,Lucknow,Uttar Pradesh,wchaudhari@example.net,,2023-07-09
+CUST-0116,Sachi Ganesan,Ahmedabad,Gujarat,ayush05@example.org,B2B,2021-06-19
+CUST-0117,Raagini Dhingra,Mumbai,Maharashtra,,B2B,2020-11-15
+CUST-0118,Wridesh Tank,Lucknow,Uttar Pradesh,vincentshenoy@example.net,B2C,2021-04-08
+CUST-0119,Aditya Shroff,Mumbai,Maharashtra,nakul17@example.com,B2B,2024-12-08
+CUST-0120,Panini Krishna,Nagpur,Maharashtra,mmittal@example.com,B2C,2024-04-07
+CUST-0121,Warjas Raj,Hyderabad,Telangana,chakrika40@example.net,B2B,2021-12-23
+CUST-0122,Chandran Taneja,Ahmedabad,Gujarat,victor95@example.org,B2B,2023-03-08
+CUST-0123,Laksh Chatterjee,Chennai,Tamil Nadu,moreridhi@example.org,B2C,2022-11-24
+CUST-0124,Gautam Merchant,Delhi,Delhi,ojasvi23@example.org,B2C,2023-12-07
+CUST-0125,Yachana Mahajan,Kolkata,West Bengal,aarinisubramaniam@example.com,B2C,2023-09-25
+CUST-0126,Ishwar Sidhu,Chennai,Tamil Nadu,dhaliwalupkaar@example.net,B2C,2023-08-15
+CUST-0127,Jasmit Chana,Delhi,Delhi,qatwal@example.net,B2B,2020-08-13
+CUST-0128,Adweta Raj,Surat,Gujarat,hritik37@example.org,B2B,2023-02-05
+CUST-0129,Timothy Bhatnagar,Surat,Gujarat,pmittal@example.com,B2C,2020-08-01
+CUST-0130,Baljiwan Modi,Surat,Gujarat,gdalia@example.org,B2C,2024-06-08
+CUST-0131,Lipika Setty,Bangalore,Karnataka,oni92@example.com,B2C,2023-04-10
+CUST-0132,Nikita Mammen,Jaipur,Rajasthan,prabhakarteerth@example.com,B2C,2022-03-23
+CUST-0133,Janani Chaudhary,Pune,Maharashtra,jagrati06@example.com,B2C,2020-12-12
+CUST-0134,Suhani Chand,Pune,Maharashtra,anshbedi@example.com,B2C,2021-03-20
+CUST-0135,Samesh Biswas,Surat,Gujarat,tarakkaul@example.com,Enterprise,2023-11-14
+CUST-0136,Aradhana Dhillon,Kolkata,West Bengal,zashilghosh@example.org,B2C,2023-04-22
+CUST-0137,Karan Aurora,Ahmedabad,Gujarat,wazir95@example.org,B2C,2020-11-14
+CUST-0138,Jonathan Sama,Hyderabad,Telangana,bhattvamakshi@example.com,B2B,2023-11-21
+CUST-0139,Siya Thakur,Ahmedabad,Gujarat,calebverma@example.com,B2C,2022-04-16
+CUST-0140,Darsh Srinivas,Hyderabad,Telangana,rsandhu@example.org,Enterprise,2022-06-14
+CUST-0141,Ethan Buch,Ahmedabad,Gujarat,manbir12@example.com,Enterprise,2023-02-14
+CUST-0142,Lakshmi Wali,Jaipur,Rajasthan,sudiksha89@example.com,B2C,2020-06-30
+CUST-0143,Tanveer Sani,Bangalore,Karnataka,akari@example.com,B2C,2024-02-19
+CUST-0144,Ojasvi Chandran,Bangalore,Karnataka,prisha54@example.com,B2C,2024-10-07
+CUST-0145,Ekalinga Chand,Surat,Gujarat,chanderrachana@example.org,B2C,2023-09-21
+CUST-0146,Kalpit Bhasin,Delhi,Delhi,jason65@example.net,B2C,2024-09-14
+CUST-0147,Charan Mani,,Uttar Pradesh,indira19@example.net,B2B,2021-01-23
+CUST-0148,Udarsh Chokshi,Bangalore,Karnataka,jhalak14@example.net,B2C,2021-02-16
+CUST-0149,Atharv Loke,Bangalore,Karnataka,goleanjali@example.net,B2C,2023-10-24
+CUST-0150,Indali Ahuja,Chennai,Tamil Nadu,lukerattan@example.org,B2C,2020-09-16
+CUST-0151,Gavin Wali,Chennai,Tamil Nadu,krishasaini@example.com,Enterprise,2021-09-14
+CUST-0152,Devika Nair,Delhi,Delhi,bennachiket@example.org,B2C,2023-10-09
+CUST-0153,Finn Magar,Nagpur,Maharashtra,fsamra@example.net,B2C,2022-03-18
+CUST-0154,Tanveer Vala,Lucknow,Uttar Pradesh,paiqushi@example.org,B2C,2021-06-01
+CUST-0155,Darika Bath,Kolkata,West Bengal,meghabhakta@example.org,Enterprise,2021-01-08
+CUST-0156,Laksh Kumer,Chennai,Tamil Nadu,falak10@example.com,B2C,2023-09-26
+CUST-0157,Kai Rai,Kolkata,West Bengal,xitipandya@example.org,B2B,2021-12-26
+CUST-0158,Rajata Bahl,Mumbai,,ubrahmbhatt@example.net,B2B,2022-02-22
+CUST-0159,Omisha Mann,Chennai,Tamil Nadu,ravelansh@example.com,B2C,2020-11-09
+CUST-0160,Janaki Chakrabarti,Jaipur,Rajasthan,pcherian@example.com,B2B,2022-12-11
+CUST-0161,Meghana Mukherjee,Nagpur,Maharashtra,timothy52@example.org,B2C,2022-07-21
+CUST-0162,Yashvi Hari,Lucknow,Uttar Pradesh,indali23@example.org,B2B,2020-09-24
+CUST-0163,Oscar Dua,Delhi,Delhi,goelwakeeta@example.com,B2B,2023-10-09
+CUST-0164,Ekantika Mutti,Mumbai,Maharashtra,riabir@example.com,B2C,2022-03-18
+CUST-0165,Anvi Bhalla,Lucknow,Uttar Pradesh,yashica14@example.com,B2C,2022-04-05
+CUST-0166,Jyoti Mangat,Surat,Gujarat,chanayashica@example.com,B2B,2022-04-24
+CUST-0167,Shivani Guha,Jaipur,Rajasthan,vamakshi82@example.org,B2C,2022-04-02
+CUST-0168,Frado Thaman,Lucknow,Uttar Pradesh,balveerkota@example.net,B2C,2022-03-10
+CUST-0169,Nathan Patla,Jaipur,Rajasthan,barkha66@example.com,B2C,2023-05-24
+CUST-0170,Gaurika Bhatti,Jaipur,Rajasthan,girindra86@example.com,B2C,2021-04-05
+CUST-0171,Gauri Bumb,Kolkata,West Bengal,inayamukherjee@example.net,B2B,2023-06-29
+CUST-0172,Kai Chad,Ahmedabad,Gujarat,krisha52@example.net,B2C,2023-07-07
+CUST-0173,Pallavi Trivedi,Surat,Gujarat,andrew54@example.org,B2C,2024-10-02
+CUST-0174,Vedika Handa,Mumbai,Maharashtra,lakshdubey@example.org,B2C,2021-06-24
+CUST-0175,Yashica Zacharia,Lucknow,Uttar Pradesh,nayarkaran@example.net,B2B,2021-11-18
+CUST-0176,Pratyush Gandhi,Hyderabad,Telangana,abassi@example.com,B2C,2023-05-20
+CUST-0177,Sachi Mane,Mumbai,Maharashtra,ikaur@example.org,B2B,2021-07-19
+CUST-0178,Rishi Pillai,Ahmedabad,Gujarat,xshenoy@example.com,B2C,2023-11-21
+CUST-0179,Neel Iyengar,Mumbai,Maharashtra,zashilben@example.net,Enterprise,2022-05-27
+CUST-0180,Harshil Varty,Bangalore,Karnataka,manefiyaz@example.org,B2C,2021-05-13
+CUST-0181,Rajeshri Chand,Hyderabad,Telangana,shravyapalla@example.org,B2C,2022-01-27
+CUST-0182,Yadavi Prakash,Ahmedabad,Gujarat,libnibumb@example.com,B2C,2021-02-14
+CUST-0183,Hardik Nayak,,West Bengal,lakshbarad@example.com,Enterprise,2024-08-02
+CUST-0184,Liam Singh,Lucknow,Uttar Pradesh,fahluwalia@example.org,B2B,2021-04-12
+CUST-0185,Pallavi Choudhry,Nagpur,Maharashtra,wazir41@example.org,B2C,2021-03-11
+CUST-0186,Dev Choudhry,Pune,Maharashtra,bwason@example.net,B2B,2022-07-30
+CUST-0187,Maanas Manne,Ahmedabad,Gujarat,nagarwal@example.com,B2B,2021-03-15
+CUST-0188,Rachit Chada,Delhi,Delhi,ekansh88@example.net,B2C,2023-12-06
+CUST-0189,Madhavi Singhal,Lucknow,Uttar Pradesh,ramkashvi@example.com,B2C,2023-09-26
+CUST-0190,Ekansh Pai,Surat,Gujarat,hemangnatarajan@example.org,B2C,2020-03-21
+CUST-0191,Parth Shetty,Ahmedabad,Gujarat,zgopal@example.org,B2C,2020-04-25
+CUST-0192,Balhaar Memon,Bangalore,Karnataka,calebiyengar@example.org,B2B,2021-07-30
+CUST-0193,Yutika Rao,Pune,Maharashtra,ckulkarni@example.net,Enterprise,2020-12-14
+CUST-0194,Champak Narula,Bangalore,Karnataka,jeet56@example.com,B2B,2023-09-19
+CUST-0195,Harinakshi Grover,Pune,Maharashtra,xtank@example.net,B2C,2021-05-02
+CUST-0196,Panini Brar,Surat,Gujarat,igole@example.com,B2C,2021-08-09
+CUST-0197,Falak Merchant,Nagpur,Maharashtra,sanaya96@example.org,B2B,2023-06-13
+CUST-0198,Sanya Basak,Delhi,Delhi,radhika40@example.org,B2B,2023-05-10
+CUST-0199,Januja Varghese,Lucknow,Uttar Pradesh,azaandhar@example.net,B2B,2023-05-23
+CUST-0200,Bakhshi Date,Kolkata,West Bengal,keerjeevika@example.com,B2B,2021-11-30
+CUST-0201,Mitesh Sengupta,Bangalore,Karnataka,kamya71@example.net,B2B,2020-09-08
+CUST-0202,Mitali Murthy,Bangalore,Karnataka,zaid10@example.net,B2C,2020-12-05
+CUST-0203,Jacob Lala,Jaipur,Rajasthan,sanaya39@example.com,B2C,2023-06-21
+CUST-0204,Ryan Das,Pune,Maharashtra,ethanseth@example.org,B2B,2024-06-28
+CUST-0205,,Chennai,Tamil Nadu,dhruv88@example.com,B2B,2024-06-15
+CUST-0206,Owen Pathak,Nagpur,Maharashtra,jairajiyer@example.org,B2C,2021-03-08
+CUST-0207,Atharv Patel,Lucknow,Uttar Pradesh,unni82@example.net,B2C,2024-06-02
+CUST-0208,Dayamai Rao,Pune,Maharashtra,avora@example.com,B2B,2024-02-12
+CUST-0209,Jeremiah Nadig,Jaipur,Rajasthan,senguptaunnati@example.net,B2C,2022-08-02
+CUST-0210,Qabil Dayal,Mumbai,Maharashtra,dthakkar@example.org,B2C,2022-08-04
+CUST-0211,Nitesh Edwin,Pune,Maharashtra,umang58@example.com,B2C,2024-03-24
+CUST-0212,Ronith Maharaj,Kolkata,West Bengal,chavviwalla@example.org,B2B,2022-07-06
+CUST-0213,Mitesh Garg,Lucknow,Uttar Pradesh,benjamin01@example.org,B2B,2024-09-28
+CUST-0214,Shivansh Saha,Nagpur,Maharashtra,tankbimala@example.net,B2C,2024-10-12
+CUST-0215,Yash Ravi,Jaipur,Rajasthan,sudiksha10@example.org,B2B,2022-03-13
+CUST-0216,Ucchal Jani,Mumbai,Maharashtra,maanas55@example.net,B2C,2024-12-09
+CUST-0217,Mohini De,Hyderabad,Telangana,yutika81@example.com,B2C,2021-03-17
+CUST-0218,Amara Sengupta,Jaipur,Rajasthan,lohitchatterjee@example.org,B2B,2021-06-13
+CUST-0219,Omya Kothari,Hyderabad,Telangana,falakmunshi@example.org,B2B,
+CUST-0220,Yutika Sibal,Lucknow,Uttar Pradesh,fmorar@example.org,B2B,2020-06-13
+CUST-0221,Yashasvi Shankar,Bangalore,,tanveerpandit@example.org,B2B,2020-04-02
+CUST-0222,Upma Mangal,Jaipur,Rajasthan,chokshiraagini@example.org,B2C,2024-05-30
+CUST-0223,Neha Pau,Delhi,Delhi,rattancharan@example.net,B2C,2022-10-22
+CUST-0224,Bhavya Borah,Hyderabad,Telangana,cthaman@example.net,B2C,2021-05-25
+CUST-0225,Kabir Chatterjee,Kolkata,West Bengal,yprakash@example.com,B2C,2022-10-15
+CUST-0226,Maanas Issac,Delhi,Delhi,ctella@example.org,B2C,2020-03-12
+CUST-0227,Urvi Venkataraman,Ahmedabad,Gujarat,mdixit@example.net,Enterprise,2020-09-12
+CUST-0228,Nicholas Ramaswamy,Ahmedabad,Gujarat,gayathri88@example.net,B2C,2022-06-13
+CUST-0229,Vaishnavi Badal,Mumbai,Maharashtra,garima16@example.net,B2B,2021-07-15
+CUST-0230,Urvi Lanka,Nagpur,Maharashtra,charansrinivasan@example.org,B2B,2022-08-15
+CUST-0231,Manbir Kibe,Bangalore,Karnataka,choudharyrayaan@example.org,B2B,
+CUST-0232,Max Sachar,Lucknow,Uttar Pradesh,nirjathaker@example.net,B2C,2024-08-07
+CUST-0233,Lakshit Venkataraman,Jaipur,Rajasthan,ektasridhar@example.net,B2C,2021-11-19
+CUST-0234,Tripti Walia,Chennai,Tamil Nadu,irya49@example.com,B2C,2020-12-17
+CUST-0235,Arya Misra,Kolkata,West Bengal,chamelimani@example.net,B2C,2021-01-13
+CUST-0236,Edhitha Srinivasan,Hyderabad,Telangana,anusha41@example.net,B2B,2023-05-20
+CUST-0237,Megha Pai,Lucknow,Uttar Pradesh,binabasak@example.com,B2C,2024-10-10
+CUST-0238,Hiral Sathe,Delhi,Delhi,varenya33@example.net,B2C,2021-05-10
+CUST-0239,,Surat,Gujarat,xavierbedi@example.net,B2B,2024-07-10
+CUST-0240,Viraj Ben,Ahmedabad,Gujarat,sachdevganga@example.net,B2C,2022-05-12
+CUST-0241,Abdul Dugar,,Gujarat,esoni@example.net,Enterprise,2020-12-30
+CUST-0242,Ekani Mangal,Kolkata,West Bengal,chakrabortyvincent@example.net,Enterprise,2023-09-10
+CUST-0243,Parth Sahni,Chennai,Tamil Nadu,balhaarranganathan@example.com,Enterprise,2020-12-06
+CUST-0244,Baljiwan Andra,,Rajasthan,hredhaan54@example.com,B2C,2024-12-11
+CUST-0245,Krish Thaman,Mumbai,Maharashtra,mmahajan@example.org,B2C,2021-08-26
+CUST-0246,Aarini Grewal,Chennai,Tamil Nadu,nazarethchakrika@example.net,Enterprise,2023-05-16
+CUST-0247,Parth Ravi,Kolkata,West Bengal,uvarma@example.org,B2C,2022-01-01
+CUST-0248,Qasim Dey,Chennai,Tamil Nadu,pnaik@example.org,Enterprise,2021-04-21
+CUST-0249,Sanya Loke,Kolkata,West Bengal,chasmum99@example.org,Enterprise,2021-04-22
+CUST-0250,Warinder Bhatia,Kolkata,West Bengal,shroffdamyanti@example.org,B2B,2022-01-10
+CUST-0251,Jacob Merchant,Pune,Maharashtra,timothy32@example.com,B2C,2020-10-06
+CUST-0252,Ojasvi Sinha,Hyderabad,Telangana,yugbumb@example.net,B2C,2022-03-26
+CUST-0253,Faras Choudhury,Surat,Gujarat,tiwarisamaksh@example.net,B2B,2022-09-06
+CUST-0254,Falak Venkatesh,Ahmedabad,Gujarat,rdada@example.org,B2C,2023-08-02
+CUST-0255,Gavin Uppal,Pune,Maharashtra,dbhakta@example.org,B2C,2022-07-26
+CUST-0256,Dalbir Shere,Jaipur,Rajasthan,anthony64@example.org,B2C,2023-09-23
+CUST-0257,Chakradev Sampath,Pune,Maharashtra,devansh80@example.org,Enterprise,2024-12-05
+CUST-0258,Azad Mangat,Bangalore,Karnataka,xgole@example.org,B2B,2023-10-30
+CUST-0259,Kavya Raja,Bangalore,Karnataka,ypurohit@example.org,B2C,2023-05-31
+CUST-0260,Ijaya Dani,Ahmedabad,Gujarat,mayawadhwa@example.org,B2C,2023-08-22
+CUST-0261,Aarush Bajaj,Chennai,Tamil Nadu,ubika86@example.net,B2B,2021-11-23
+CUST-0262,Yug Sharma,Hyderabad,Telangana,mohammed43@example.net,Enterprise,2023-10-29
+CUST-0263,Oni Babu,Ahmedabad,Gujarat,samuelbhavsar@example.org,B2C,2022-12-20
+CUST-0264,Chanakya Konda,Kolkata,West Bengal,rattireva@example.org,B2C,2022-09-12
+CUST-0265,Logan Thakur,Delhi,Delhi,vivaan95@example.net,B2B,2022-12-27
+CUST-0266,Warjas Mittal,,Telangana,timothysachdev@example.com,B2B,2021-05-17
+CUST-0267,Prisha Tandon,Nagpur,Maharashtra,padmanabhanlakshmi@example.net,B2B,2021-08-05
+CUST-0268,Nilima Dixit,Surat,Gujarat,krisha28@example.com,B2B,2021-03-16
+CUST-0269,Charita Dhawan,Hyderabad,Telangana,jbhardwaj@example.com,B2C,2024-11-02
+CUST-0270,Lipika Kibe,Kolkata,West Bengal,samar51@example.com,B2C,2024-03-26
+CUST-0271,Rayaan Behl,Kolkata,West Bengal,krishna99@example.org,B2B,2024-05-14
+CUST-0272,Teerth Srinivas,Mumbai,Maharashtra,gaurangimitter@example.org,B2B,2021-01-21
+CUST-0273,Jacob Srinivas,Ahmedabad,Gujarat,samarthranganathan@example.org,B2B,2022-10-05
+CUST-0274,Lajita Shukla,Kolkata,West Bengal,darika45@example.net,Enterprise,2024-05-31
+CUST-0275,Guneet Singh,,Karnataka,samar55@example.com,B2C,2020-03-24
+CUST-0276,Madhav Babu,Jaipur,Rajasthan,omisha42@example.org,B2C,2021-08-25
+CUST-0277,Yatan Tata,Delhi,Delhi,aarini77@example.com,B2B,2020-11-03
+CUST-0278,Omkaar Dey,Surat,Gujarat,igour@example.net,B2B,2024-10-13
+CUST-0279,Falan Bava,Ahmedabad,Gujarat,sacharlaksh@example.net,B2B,2021-02-26
+CUST-0280,Aditya Kamdar,Lucknow,Uttar Pradesh,dprakash@example.net,B2B,2023-03-10
+CUST-0281,Vinaya Babu,Bangalore,Karnataka,walinisha@example.org,B2B,2020-01-31
+CUST-0282,Bhavini Badal,Nagpur,Maharashtra,ggola@example.org,B2C,2022-08-15
+CUST-0283,Rehaan Vyas,Chennai,Tamil Nadu,irya46@example.org,B2C,2021-11-12
+CUST-0284,Tripti Kohli,Kolkata,West Bengal,charitabuch@example.net,B2C,2024-12-15
+CUST-0285,Girik Ravi,Lucknow,Uttar Pradesh,jpurohit@example.com,B2C,2020-04-12
+CUST-0286,Onveer Butala,Kolkata,West Bengal,psaraf@example.com,B2C,2022-10-30
+CUST-0287,Brijesh Karpe,Hyderabad,Telangana,vaishnavimadan@example.org,B2C,2024-08-14
+CUST-0288,Bachittar Gola,Bangalore,Karnataka,amol39@example.org,B2C,2023-10-05
+CUST-0289,Faraj Mistry,Hyderabad,Telangana,wrideshramachandran@example.net,B2C,2024-06-25
+CUST-0290,Leena Dey,Mumbai,Maharashtra,tellahiral@example.org,B2C,2020-06-27
+CUST-0291,Faqid Oak,Hyderabad,Telangana,bnarain@example.net,B2C,2021-05-14
+CUST-0292,Vritti Kari,Mumbai,Maharashtra,keya62@example.net,B2C,2022-12-05
+CUST-0293,Frederick Merchant,Nagpur,Maharashtra,ethanbutala@example.com,B2B,2020-10-08
+CUST-0294,Lopa Nadig,Mumbai,Maharashtra,hredhaan10@example.com,B2C,2022-03-23
+CUST-0295,Harsh Deo,Lucknow,Uttar Pradesh,groverraagini@example.com,B2C,2022-10-14
+CUST-0296,Harshil Bal,Kolkata,West Bengal,pandyagirik@example.net,B2C,2022-12-28
+CUST-0297,Lekha Arora,,Tamil Nadu,odika61@example.net,B2B,2024-07-03
+CUST-0298,Omkaar Rai,Surat,Gujarat,liamluthra@example.com,B2C,2021-05-05
+CUST-0299,Dev Ganesh,Hyderabad,Telangana,amajumdar@example.com,,2022-06-03
+CUST-0300,Jalsa Krishnamurthy,Surat,Gujarat,warhihayre@example.com,B2C,2020-07-14
+CUST-0301,Abeer Randhawa,Bangalore,Karnataka,lajita57@example.com,B2C,2022-02-25
+CUST-0302,Charita Nagi,Mumbai,Maharashtra,varenyamurthy@example.org,B2C,2024-10-27
+CUST-0303,Bishakha Swaminathan,Kolkata,West Bengal,eshanapuri@example.com,B2C,2024-01-30
+CUST-0304,Janya Comar,Delhi,Delhi,pranitbala@example.net,B2B,2022-04-22
+CUST-0305,Raksha Manne,Ahmedabad,Gujarat,regexalak@example.org,B2B,2023-03-02
+CUST-0306,Zayyan Dube,Lucknow,Uttar Pradesh,epurohit@example.com,Enterprise,2024-12-14
+CUST-0307,Nandini Warrior,Chennai,Tamil Nadu,ybansal@example.com,B2C,2023-07-05
+CUST-0308,Ikbal Kothari,Pune,Maharashtra,ojas90@example.net,B2C,2024-12-01
+CUST-0309,Garima Sani,Lucknow,Uttar Pradesh,anneguneet@example.com,B2B,2021-02-09
+CUST-0310,Sanaya Prasad,Nagpur,Maharashtra,xsheth@example.net,B2C,2022-12-10
+CUST-0311,Hemani Bakshi,,Delhi,scheema@example.com,B2C,2024-08-07
+CUST-0312,Jack Dhar,,Gujarat,devika57@example.org,B2C,2022-08-09
+CUST-0313,Vamakshi Chatterjee,Delhi,Delhi,usethi@example.org,B2C,2021-07-02
+CUST-0314,Arin Oza,Hyderabad,,galayagnesh@example.net,Enterprise,2020-11-14
+CUST-0315,Ganga Sandhu,Mumbai,Maharashtra,zkata@example.com,B2B,2023-02-23
+CUST-0316,Rachana Randhawa,Chennai,Tamil Nadu,horashivani@example.net,B2B,2022-02-23
+CUST-0317,Tanish Jha,Jaipur,Rajasthan,dev91@example.net,B2C,2020-12-07
+CUST-0318,Ronith Shankar,Mumbai,Maharashtra,lalavrishti@example.net,B2C,2024-10-29
+CUST-0319,Lipika Ramanathan,Jaipur,Rajasthan,pallindira@example.com,B2C,2023-02-01
+CUST-0320,Frado Desai,Surat,Gujarat,jacob34@example.org,B2C,2020-11-30
+CUST-0321,Yasti Rama,Ahmedabad,Gujarat,kdevi@example.com,B2C,2022-02-11
+CUST-0322,Oscar Ganesan,Kolkata,West Bengal,imani@example.org,B2B,2021-07-28
+CUST-0323,Chatresh Parmer,Pune,,sundaramlaban@example.org,B2B,2024-01-28
+CUST-0324,Nilima Swamy,Bangalore,Karnataka,fsawhney@example.org,B2C,2020-05-30
+CUST-0325,Thomas Master,Mumbai,Maharashtra,maharajumang@example.net,Enterprise,2021-06-11
+CUST-0326,Warhi Vaidya,,Tamil Nadu,comaramrita@example.net,B2B,2024-02-12
+CUST-0327,Benjamin Sastry,Nagpur,Maharashtra,pavanichaudry@example.net,B2C,2024-02-24
+CUST-0328,Chameli Bali,Nagpur,Maharashtra,wlall@example.org,B2B,2022-03-12
+CUST-0329,Warjas Kadakia,Delhi,Delhi,priya29@example.org,B2C,2023-12-04
+CUST-0330,Daniel Panchal,Chennai,Tamil Nadu,om54@example.com,B2C,2022-11-11
+CUST-0331,Krishna Sabharwal,Ahmedabad,Gujarat,malhotrajonathan@example.net,B2C,2024-04-30
+CUST-0332,Madhav Nagy,Surat,Gujarat,mayasuri@example.org,B2B,2022-11-20
+CUST-0333,Oeshi Prashad,Jaipur,Rajasthan,oborra@example.org,B2C,2022-01-05
+CUST-0334,Jyoti Sha,Delhi,Delhi,lnarang@example.org,B2C,2024-05-05
+CUST-0335,Tara Parmar,Nagpur,Maharashtra,warriormitali@example.org,B2C,2024-11-02
+CUST-0336,Warda Loyal,Bangalore,Karnataka,bhanumati58@example.net,B2C,2020-08-26
+CUST-0337,Hemal Bava,Bangalore,Karnataka,,B2B,2020-08-14
+CUST-0338,Ridhi Shan,Mumbai,Maharashtra,sanghasamaksh@example.net,B2B,2024-07-18
+CUST-0339,Nathan Mahal,Ahmedabad,Gujarat,patelzashil@example.org,B2C,2021-11-09
+CUST-0340,Charles Randhawa,Kolkata,West Bengal,vivaan61@example.net,B2C,2020-06-22
+CUST-0341,Vansha Brahmbhatt,,Maharashtra,upkaarvenkataraman@example.net,B2C,2022-03-23
+CUST-0342,Hemal Dara,Ahmedabad,Gujarat,edeo@example.org,B2C,2021-02-22
+CUST-0343,Harsh Chauhan,Surat,Gujarat,jhalak42@example.com,B2C,2023-11-13
+CUST-0344,Luke Biswas,Jaipur,Rajasthan,galaria@example.com,B2C,2023-08-12
+CUST-0345,Nisha Savant,Chennai,Tamil Nadu,gabrielchaudhry@example.org,B2C,2023-10-05
+CUST-0346,Indali Sanghvi,Nagpur,Maharashtra,logan34@example.net,B2B,2020-06-02
+CUST-0347,Avi Mitra,Bangalore,Karnataka,zarnaupadhyay@example.org,B2B,2023-09-27
+CUST-0348,Chatura Khatri,Chennai,Tamil Nadu,hraju@example.org,B2C,2022-07-01
+CUST-0349,Advik Patel,Chennai,Tamil Nadu,kevin69@example.com,B2C,2021-10-29
+CUST-0350,Urishilla Bora,Chennai,Tamil Nadu,birakshay@example.com,B2B,2021-01-28
+CUST-0351,Mitali Toor,Bangalore,Karnataka,yachana66@example.net,B2C,2022-01-04
+CUST-0352,Arunima Chacko,Surat,Gujarat,farhan83@example.org,B2B,2022-09-06
+CUST-0353,Dominic Mukherjee,Lucknow,Uttar Pradesh,dkhare@example.org,B2B,2020-06-06
+CUST-0354,Jack Setty,Hyderabad,Telangana,moreparth@example.org,B2C,2020-01-24
+CUST-0355,Advay Gade,Jaipur,Rajasthan,hpalan@example.net,B2C,2023-11-30
+CUST-0356,Ojas Prabhu,Lucknow,Uttar Pradesh,amrutadalal@example.org,B2B,2021-09-03
+CUST-0357,Anita Viswanathan,Jaipur,Rajasthan,lallfaraj@example.com,B2C,2022-04-11
+CUST-0358,Christopher Tata,Delhi,Delhi,jhalakdugar@example.com,B2C,2023-11-13
+CUST-0359,Vedant Upadhyay,Ahmedabad,Gujarat,basuadvik@example.org,Enterprise,2020-03-24
+CUST-0360,Leela Doctor,Ahmedabad,Gujarat,balendrasaini@example.org,B2C,2021-08-10
+CUST-0361,Ekaja Madan,Pune,Maharashtra,pradhanjagdish@example.net,B2C,2023-05-14
+CUST-0362,Praneel Kapoor,Ahmedabad,Gujarat,rattanekapad@example.com,B2B,2024-04-30
+CUST-0363,Falak Chadha,Bangalore,Karnataka,xanand@example.org,B2C,2021-06-16
+CUST-0364,Xavier Shetty,Kolkata,West Bengal,wakeeta38@example.org,B2C,2020-10-01
+CUST-0365,Arjun Kaul,Mumbai,Maharashtra,aditya50@example.net,Enterprise,2021-11-18
+CUST-0366,Hemang Jha,Pune,Maharashtra,oniswamy@example.org,B2C,2024-11-10
+CUST-0367,Ati Chander,Mumbai,Maharashtra,katazinal@example.com,Enterprise,2023-07-03
+CUST-0368,Tara Chad,Jaipur,Rajasthan,tiwarikiaan@example.net,Enterprise,2024-02-06
+CUST-0369,David Saran,Mumbai,Maharashtra,warjasmanne@example.com,B2C,2024-04-02
+CUST-0370,Eta Nadkarni,Mumbai,Maharashtra,omagar@example.org,B2C,2024-09-18
+CUST-0371,Ikbal Dugal,Pune,Maharashtra,galashivani@example.com,B2C,2021-07-27
+CUST-0372,Ishita Johal,Delhi,Delhi,dmorar@example.com,B2C,2024-04-05
+CUST-0373,Nakul Modi,Chennai,Tamil Nadu,kalefalak@example.org,B2C,2020-06-15
+CUST-0374,Ishani Randhawa,Ahmedabad,Gujarat,mistryabha@example.org,B2B,2020-02-26
+CUST-0375,Sneha Krish,Ahmedabad,Gujarat,shereharsh@example.org,B2C,2020-08-09
+CUST-0376,Tristan De,Bangalore,Karnataka,nandinipradhan@example.net,B2C,2023-02-24
+CUST-0377,Aashi Borde,Pune,Maharashtra,bhattacharyyarudra@example.net,B2B,2022-03-20
+CUST-0378,George Narula,Bangalore,Karnataka,basaktriya@example.org,B2C,2020-11-02
+CUST-0379,Megha Taneja,Kolkata,West Bengal,rajapooja@example.org,B2B,2021-10-08
+CUST-0380,Anvi Mammen,Kolkata,West Bengal,cdixit@example.net,B2C,
+CUST-0381,Chakrika Tara,Bangalore,Karnataka,dsrinivas@example.org,B2C,2021-05-25
+CUST-0382,Oni Iyengar,Pune,Maharashtra,anirudhraja@example.net,B2B,2021-10-17
+CUST-0383,Hemangini Thakkar,Bangalore,Karnataka,lipika42@example.org,B2B,2021-08-05
+CUST-0384,Ayushman Mand,Ahmedabad,Gujarat,sodhiishita@example.net,,2024-12-30
+CUST-0385,Harish Kota,Lucknow,Uttar Pradesh,amairawalla@example.net,B2B,2020-04-12
+CUST-0386,Lipika Pant,Hyderabad,Telangana,patrickkhalsa@example.net,B2B,2021-08-03
+CUST-0387,Ayaan Pandey,Mumbai,Maharashtra,raghavtailor@example.net,B2C,2021-07-18
+CUST-0388,Baljiwan Chana,Hyderabad,Telangana,kaultheodore@example.org,B2C,2022-08-19
+CUST-0389,Garima Jaggi,Pune,Maharashtra,harinigoel@example.com,B2B,2020-04-18
+CUST-0390,Lucky Choudhry,Surat,Gujarat,elijah56@example.net,B2B,2020-07-03
+CUST-0391,Ekantika Deshpande,Hyderabad,Telangana,rajeshrisur@example.net,Enterprise,2021-08-02
+CUST-0392,Udant Gill,Kolkata,West Bengal,umohanty@example.net,B2C,2021-06-21
+CUST-0393,Aarav Raman,Jaipur,Rajasthan,gopaleesha@example.net,B2C,2021-02-07
+CUST-0394,Watika Dhaliwal,Mumbai,Maharashtra,faras35@example.com,,2020-11-02
+CUST-0395,,Chennai,Tamil Nadu,lankashaurya@example.org,B2C,2023-06-19
+CUST-0396,Aahana Chokshi,Surat,Gujarat,bavalibni@example.com,Enterprise,2023-08-30
+CUST-0397,Odika Tailor,Pune,Maharashtra,ipanchal@example.com,B2B,2020-07-04
+CUST-0398,Umang Gaba,Mumbai,Maharashtra,zborah@example.org,B2C,2021-06-22
+CUST-0399,Advika Cheema,Hyderabad,Telangana,oommenonkar@example.com,B2B,2020-10-20
+CUST-0400,Girik Nigam,Kolkata,West Bengal,bbalasubramanian@example.net,B2B,2020-10-28
+CUST-0401,Naksh Bera,Delhi,Delhi,narulasamesh@example.org,B2C,2022-01-17
+CUST-0402,Baghyawati Mishra,Lucknow,Uttar Pradesh,gopalbawa@example.com,Enterprise,2022-11-10
+CUST-0403,Mitesh Bhagat,Chennai,Tamil Nadu,aarush61@example.com,B2C,2024-02-13
+CUST-0404,Ryan Chatterjee,Surat,Gujarat,jhaverionkar@example.net,B2B,2021-06-16
+CUST-0405,Urvashi D’Alia,Lucknow,Uttar Pradesh,mitali77@example.net,B2C,2021-04-28
+CUST-0406,Qasim Prabhakar,Mumbai,Maharashtra,lpingle@example.com,B2B,2020-03-22
+CUST-0407,Udyati Lall,Kolkata,West Bengal,amrutabhatia@example.org,B2C,2023-10-05
+CUST-0408,Frederick Padmanabhan,Kolkata,West Bengal,jkaran@example.org,B2C,2024-03-15
+CUST-0409,Vaishnavi Keer,Hyderabad,Telangana,fmistry@example.com,Enterprise,2024-07-06
+CUST-0410,Yadavi Varughese,Ahmedabad,Gujarat,jaisen@example.org,B2C,2024-09-28
+CUST-0411,Siddharth Hans,Hyderabad,Telangana,,B2C,2024-12-09
+CUST-0412,Saksham Divan,Ahmedabad,Gujarat,ekaja11@example.com,Enterprise,2022-10-12
+CUST-0413,Anya Venkatesh,Ahmedabad,Gujarat,yarora@example.net,Enterprise,2023-02-11
+CUST-0414,Isaiah Sachdeva,Chennai,Tamil Nadu,manbirchaudhry@example.org,B2C,2022-10-24
+CUST-0415,Bhavika Wason,Hyderabad,Telangana,nirja46@example.net,B2B,2022-06-05
+CUST-0416,Baljiwan Gera,Nagpur,Maharashtra,neha29@example.net,B2C,2023-05-28
+CUST-0417,Balvan Randhawa,Delhi,Delhi,wazir07@example.com,B2C,2024-06-25
+CUST-0418,Geetika Mitter,Surat,Gujarat,avni71@example.org,B2C,2020-09-02
+CUST-0419,Ekani Luthra,Bangalore,Karnataka,mchakraborty@example.com,B2B,2021-01-20
+CUST-0420,Vedhika Varty,Bangalore,Karnataka,daksh82@example.org,B2B,2021-07-22
+CUST-0421,Krishna Viswanathan,Hyderabad,Telangana,ghosereyansh@example.org,B2B,2024-03-08
+CUST-0422,Bachittar Shan,Hyderabad,Telangana,patelrushil@example.com,B2B,
+CUST-0423,,Lucknow,Uttar Pradesh,balasubramanianwyatt@example.com,B2C,2022-06-11
+CUST-0424,Peter Som,Surat,Gujarat,hemangini24@example.net,B2C,2024-02-26
+CUST-0425,Bhavani Bala,Surat,Gujarat,kbawa@example.net,B2C,2023-11-24
+CUST-0426,Timothy Kar,Chennai,Tamil Nadu,amrutarout@example.net,B2C,2020-02-06
+CUST-0427,Urvi Deo,Hyderabad,Telangana,abhiramkapur@example.com,B2C,2023-01-15
+CUST-0428,Anvi Sampath,Surat,Gujarat,dpalla@example.com,B2B,2021-02-02
+CUST-0429,Mekhala Chaudry,Lucknow,Uttar Pradesh,,B2C,2023-03-28
+CUST-0430,Chanchal Chokshi,Ahmedabad,Gujarat,vbhatt@example.com,B2C,2023-03-15
+CUST-0431,Advika Misra,Kolkata,West Bengal,masonvarughese@example.org,B2C,2024-06-30
+CUST-0432,Ekaja Dey,Kolkata,West Bengal,tankchakrika@example.com,B2B,2024-07-14
+CUST-0433,Lipika Banik,Ahmedabad,Gujarat,hemalkapadia@example.net,B2B,2022-09-03
+CUST-0434,Jagrati Tripathi,Pune,Maharashtra,onkar82@example.com,B2C,2020-06-27
+CUST-0435,Aarna Goswami,Lucknow,Uttar Pradesh,gaurav35@example.org,B2C,2023-09-20
+CUST-0436,Osha Narula,Surat,Gujarat,abha94@example.com,B2B,2024-04-03
+CUST-0437,Chatresh Bobal,Nagpur,Maharashtra,ghayer@example.org,B2C,2024-05-03
+CUST-0438,Chanchal Sachdev,Lucknow,Uttar Pradesh,doralaksh@example.org,B2B,2021-09-17
+CUST-0439,Luke Mutti,Ahmedabad,Gujarat,farissura@example.com,B2B,2023-02-26
+CUST-0440,Dhriti Bhardwaj,Delhi,Delhi,sethanusha@example.org,B2C,
+CUST-0441,Nathan Suri,Jaipur,Rajasthan,dayalradha@example.net,B2C,2022-02-23
+CUST-0442,Vansha Rajagopal,Mumbai,Maharashtra,baradryan@example.net,Enterprise,2021-11-12
+CUST-0443,Ekanta Wali,Ahmedabad,Gujarat,andrewagrawal@example.net,B2C,2023-09-01
+CUST-0444,Hemangini Muni,Nagpur,Maharashtra,harshilrajagopal@example.net,B2C,2022-12-10
+CUST-0445,Dhruv Bath,Surat,Gujarat,bina78@example.net,B2B,2022-08-15
+CUST-0446,Krish Oommen,Nagpur,Maharashtra,wparmer@example.org,Enterprise,2020-10-28
+CUST-0447,Anirudh Kari,Nagpur,Maharashtra,karankakar@example.net,Enterprise,2020-02-10
+CUST-0448,Jatin Peri,Hyderabad,Telangana,prashadaadhya@example.net,B2B,2023-02-11
+CUST-0449,Hritik Bahri,Hyderabad,Telangana,,B2C,2021-11-25
+CUST-0450,Urvi Dua,Chennai,Tamil Nadu,adityamitra@example.com,B2C,2023-04-23
+CUST-0451,Laksh Sahota,Ahmedabad,Gujarat,vaidyajacob@example.com,B2B,2020-07-27
+CUST-0452,Widisha Issac,Chennai,Tamil Nadu,,B2C,2021-10-15
+CUST-0453,Chakrika Dyal,Ahmedabad,Gujarat,tanejasarthak@example.net,B2C,2024-08-30
+CUST-0454,Wahab Agate,Lucknow,Uttar Pradesh,chakrabortyindrajit@example.net,Enterprise,2023-05-06
+CUST-0455,Gautam Vaidya,Mumbai,Maharashtra,chaudhuriaahana@example.net,B2C,2021-02-26
+CUST-0456,Aishani Shetty,Nagpur,Maharashtra,chaudhryowen@example.org,B2C,2024-04-05
+CUST-0457,Dhriti Sandhu,Lucknow,Uttar Pradesh,chandranchakradev@example.org,B2C,2024-04-04
+CUST-0458,Falguni Parmar,Jaipur,Rajasthan,uloyal@example.org,B2C,
+CUST-0459,Qadim Comar,Kolkata,West Bengal,dratta@example.com,B2C,2024-03-06
+CUST-0460,Oviya Ganesan,Bangalore,Karnataka,deodaniel@example.org,B2C,2020-07-08
+CUST-0461,Raksha Golla,Ahmedabad,Gujarat,nparmer@example.org,B2C,2024-04-24
+CUST-0462,Vasudha Sura,Jaipur,Rajasthan,sabharwalridhi@example.org,B2B,2020-04-25
+CUST-0463,Advik Vohra,Kolkata,West Bengal,hamsinivenkataraman@example.net,B2B,2023-06-10
+CUST-0464,Rachita Kothari,Surat,Gujarat,qpal@example.net,B2C,2023-03-17
+CUST-0465,Chatura Apte,Pune,Maharashtra,yashasvisingh@example.com,Enterprise,2024-05-06
+CUST-0466,Vyanjana Nagi,Mumbai,Maharashtra,gangamall@example.org,B2C,2022-07-14
+CUST-0467,Neha Keer,Chennai,Tamil Nadu,sharafsachi@example.net,B2C,2022-03-29
+CUST-0468,Sanya Mutti,Chennai,Tamil Nadu,tankandrew@example.org,B2B,2022-01-06
+CUST-0469,Aadi Chand,Lucknow,Uttar Pradesh,yashoda83@example.net,B2C,2023-05-11
+CUST-0470,Januja Bhagat,Hyderabad,Telangana,suhaninarula@example.net,Enterprise,2023-11-02
+CUST-0471,Januja Sethi,Kolkata,West Bengal,chatterjeetristan@example.org,B2C,2021-09-15
+CUST-0472,Kashvi Cherian,Pune,Maharashtra,galawaida@example.org,Enterprise,2024-02-09
+CUST-0473,Hredhaan Kumar,Jaipur,Rajasthan,raghavdara@example.com,B2C,2021-01-28
+CUST-0474,Hamsini Chokshi,Mumbai,Maharashtra,obatra@example.net,B2B,2022-12-11
+CUST-0475,Tanvi Thaman,Kolkata,West Bengal,wishiagrawal@example.net,B2C,2023-09-06
+CUST-0476,Vasudha Trivedi,Pune,Maharashtra,oscardave@example.org,Enterprise,2021-12-08
+CUST-0477,Yamini Rajagopalan,Bangalore,Karnataka,rkothari@example.com,B2C,2024-10-25
+CUST-0478,Sneha Deol,Ahmedabad,Gujarat,nitaravala@example.com,B2C,2024-03-19
+CUST-0479,Teerth Iyer,Chennai,Tamil Nadu,binapai@example.net,Enterprise,2020-08-30
+CUST-0480,Yahvi Naidu,Jaipur,Rajasthan,pandeyvarsha@example.net,B2C,2022-11-07
+CUST-0481,Bhavika Sami,Chennai,Tamil Nadu,virkhredhaan@example.org,B2B,2021-11-26
+CUST-0482,Daksh Iyengar,Jaipur,Rajasthan,naveen44@example.org,B2B,2024-03-12
+CUST-0483,Samar Bali,Lucknow,Uttar Pradesh,sneha19@example.net,B2C,2023-09-12
+CUST-0484,Lopa Khanna,Hyderabad,Telangana,champak66@example.com,B2B,2024-10-12
+CUST-0485,Chatura Arya,Jaipur,Rajasthan,samaksh97@example.org,B2C,2024-07-22
+CUST-0486,Ronith Hari,Chennai,Tamil Nadu,saumya21@example.org,Enterprise,2024-10-23
+CUST-0487,Krishna Baria,Lucknow,Uttar Pradesh,jmallick@example.com,B2C,2020-08-25
+CUST-0488,Abdul Narayanan,Jaipur,Rajasthan,cdubey@example.org,B2C,2024-08-22
+CUST-0489,Charvi Swaminathan,Bangalore,Karnataka,elijah58@example.org,Enterprise,2024-10-13
+CUST-0490,Yashasvi Dutta,Hyderabad,Telangana,zyadav@example.org,B2B,2021-09-30
+CUST-0491,Garima Narula,Jaipur,Rajasthan,chaaya39@example.net,B2C,2022-05-17
+CUST-0492,Ishwar Pal,Lucknow,Uttar Pradesh,pkhosla@example.net,B2B,2024-08-04
+CUST-0493,Balveer Nagi,Surat,Gujarat,ycomar@example.com,B2C,2022-09-13
+CUST-0494,Aryan Varughese,Kolkata,West Bengal,yoshita87@example.com,B2C,2020-03-21
+CUST-0495,Ekani Varkey,Delhi,Delhi,charoliver@example.net,B2C,2022-08-31
+CUST-0496,Shivansh Kala,Pune,Maharashtra,nchawla@example.net,B2C,2024-02-22
+CUST-0497,Ekbal Dube,Delhi,Delhi,sharafgarima@example.org,B2C,2020-06-08
+CUST-0498,Pranav Krishnamurthy,,Gujarat,kariaarna@example.com,B2C,2021-12-09
+CUST-0499,Rachita Mutti,Delhi,Delhi,ramachandranjagat@example.net,Enterprise,2020-01-11
+CUST-0500,Chakradev Bora,Surat,Gujarat,yadavi14@example.net,Enterprise,2021-07-04

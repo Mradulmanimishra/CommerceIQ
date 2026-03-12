@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CommerceIQ — Unified Commerce Intelligence Platform</title>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-primary:#0f172a;--bg-card:#1e293b;--bg-card-hover:#253349;
+  --accent:#06b6d4;--accent-light:#22d3ee;--accent-dark:#0891b2;
+  --green:#10b981;--amber:#f59e0b;--red:#ef4444;--purple:#a78bfa;
+  --text-primary:#f1f5f9;--text-secondary:#94a3b8;--text-muted:#64748b;
+  --border:#334155;--radius:12px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg-primary);color:var(--text-primary);
+  line-height:1.6;min-height:100vh;
+}
+a{color:var(--accent);text-decoration:none}
+
+/* ═══════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════ */
+.header{
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  border-bottom:1px solid var(--border);padding:16px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
+}
+.header-left{display:flex;align-items:center;gap:16px}
+.logo-icon{width:42px;height:42px}
+.header-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;
+  background:linear-gradient(135deg,var(--accent-light),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.header-tagline{font-size:12px;color:var(--text-secondary);margin-top:-2px}
+.header-right{display:flex;align-items:center;gap:20px}
+.live-badge{display:flex;align-items:center;gap:6px;font-size:12px;
+  font-weight:600;color:var(--green);background:rgba(16,185,129,0.1);
+  padding:4px 12px;border-radius:20px;border:1px solid rgba(16,185,129,0.3)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+  animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.clock{font-size:13px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.btn-export{background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;border:none;padding:8px 18px;border-radius:var(--radius-sm);
+  font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-export:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(6,182,212,0.3)}
+
+/* ═══════════════════════════════════════════════
+   FILTERS BAR
+   ═══════════════════════════════════════════════ */
+.filters-bar{
+  padding:14px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  background:var(--bg-card);border-bottom:1px solid var(--border);
+}
+.filter-group{display:flex;align-items:center;gap:8px}
+.filter-label{font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px}
+.filter-select{
+  background:var(--bg-primary);color:var(--text-primary);border:1px solid var(--border);
+  padding:6px 12px;border-radius:var(--radius-sm);font-size:13px;font-family:inherit;cursor:pointer;
+  min-width:130px;
+}
+.filter-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(6,182,212,0.2)}
+
+/* ═══════════════════════════════════════════════
+   TABS
+   ═══════════════════════════════════════════════ */
+.tabs-bar{
+  display:flex;gap:0;padding:0 32px;background:var(--bg-primary);
+  border-bottom:1px solid var(--border);
+}
+.tab-btn{
+  padding:14px 24px;font-size:14px;font-weight:600;color:var(--text-muted);
+  background:none;border:none;border-bottom:3px solid transparent;
+  cursor:pointer;transition:all .2s;font-family:inherit;
+}
+.tab-btn:hover{color:var(--text-secondary)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none;padding:24px 32px;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════════════════════════════════════════
+   KPI CARDS
+   ═══════════════════════════════════════════════ */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:16px;margin-bottom:24px}
+.kpi-card{
+  background:linear-gradient(135deg,var(--bg-card) 0%,var(--bg-card-hover) 100%);
+  border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;
+  border:1px solid var(--border);transition:all .25s;
+}
+.kpi-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));border-radius:4px 0 0 4px;
+}
+.kpi-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.3);border-color:var(--accent)}
+.kpi-label{font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+.kpi-value{font-size:26px;font-weight:800;letter-spacing:-0.5px}
+.kpi-sub{font-size:11px;color:var(--text-muted);margin-top:4px}
+.kpi-card.green .kpi-value{color:var(--green)}
+.kpi-card.amber .kpi-value{color:var(--amber)}
+.kpi-card.red .kpi-value{color:var(--red)}
+.kpi-card.accent .kpi-value{color:var(--accent-light)}
+
+/* ═══════════════════════════════════════════════
+   CHART CONTAINERS
+   ═══════════════════════════════════════════════ */
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.charts-grid.three{grid-template-columns:1fr 1fr 1fr}
+.chart-box{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;min-height:320px;
+}
+.chart-box.full{grid-column:1/-1}
+.chart-title{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text-primary)}
+
+/* ═══════════════════════════════════════════════
+   TABLES
+   ═══════════════════════════════════════════════ */
+.data-table{width:100%;border-collapse:collapse;font-size:13px}
+.data-table th{
+  text-align:left;padding:10px 14px;background:var(--bg-primary);
+  color:var(--text-secondary);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border);
+}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-primary)}
+.data-table tr:hover td{background:rgba(6,182,212,0.05)}
+.status-good{color:var(--green)}
+.status-warn{color:var(--amber)}
+.status-bad{color:var(--red)}
+
+/* ═══════════════════════════════════════════════
+   AI INSIGHT BOX
+   ═══════════════════════════════════════════════ */
+.insight-box{
+  background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(6,182,212,0.03));
+  border:1px solid rgba(6,182,212,0.2);border-radius:var(--radius);
+  padding:18px 24px;margin-top:24px;position:relative;overflow:hidden;
+}
+.insight-box::before{
+  content:'';position:absolute;top:0;left:-100%;width:200%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(6,182,212,0.06),transparent);
+  animation:shimmer 3s infinite;
+}
+@keyframes shimmer{0%{left:-100%}100%{left:100%}}
+.insight-label{
+  font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;
+  letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:6px;
+}
+.insight-text{font-size:13px;color:var(--text-secondary);line-height:1.7;position:relative;z-index:1}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media(max-width:900px){
+  .header{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .filters-bar,.tab-content{padding-left:16px;padding-right:16px}
+  .tabs-bar{padding:0 16px;overflow-x:auto}
+  .charts-grid,.charts-grid.three{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+}
+@media print{
+  .header,.filters-bar,.tabs-bar,.btn-export{position:static}
+  .tab-content{display:block!important;page-break-before:always}
+  body{background:#fff;color:#000}
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════ */
+.footer{
+  text-align:center;padding:24px 32px;border-top:1px solid var(--border);
+  color:var(--text-muted);font-size:12px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+  <div class="header-left">
+    <svg class="logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="logoGrad" x1="0" y1="0" x2="42" y2="42">
+          <stop offset="0%" stop-color="#22d3ee"/>
+          <stop offset="100%" stop-color="#0891b2"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="38" height="38" rx="10" stroke="url(#logoGrad)" stroke-width="2.5" fill="none"/>
+      <path d="M12 28 L16 14 L21 22 L26 14 L30 28" stroke="url(#logoGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="21" cy="12" r="2.5" fill="url(#logoGrad)"/>
+    </svg>
+    <div>
+      <div class="header-title">CommerceIQ</div>
+      <div class="header-tagline">Unified Commerce Intelligence Platform</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="live-badge"><span class="live-dot"></span> Live</div>
+    <div class="clock" id="liveClock"></div>
+    <button class="btn-export" onclick="window.print()">Export PDF</button>
+  </div>
+</header>
+
+<!-- ═══ FILTERS ═══ -->
+<div class="filters-bar">
+  <div class="filter-group">
+    <span class="filter-label">Period</span>
+    <select class="filter-select" id="filterDate" onchange="applyFilters()">
+      <option value="all">All 2024</option>
+      <option value="Q1">Q1 (Jan-Mar)</option>
+      <option value="Q2">Q2 (Apr-Jun)</option>
+      <option value="Q3">Q3 (Jul-Sep)</option>
+      <option value="Q4">Q4 (Oct-Dec)</option>
+      <option value="L30">Last 30 Days</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Channel</span>
+    <select class="filter-select" id="filterChannel" onchange="applyFilters()">
+      <option value="all">All Channels</option>
+      <option value="Online">Online</option>
+      <option value="Marketplace">Marketplace</option>
+      <option value="InStore">InStore</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Segment</span>
+    <select class="filter-select" id="filterSegment" onchange="applyFilters()">
+      <option value="all">All Segments</option>
+      <option value="B2C">B2C</option>
+      <option value="B2B">B2B</option>
+      <option value="Enterprise">Enterprise</option>
+    </select>
+  </div>
+</div>
+
+<!-- ═══ TABS ═══ -->
+<div class="tabs-bar">
+  <button class="tab-btn active" data-tab="sales" onclick="switchTab('sales')">📊 Sales Analytics</button>
+  <button class="tab-btn" data-tab="ecom" onclick="switchTab('ecom')">🛒 E-Commerce</button>
+  <button class="tab-btn" data-tab="ops" onclick="switchTab('ops')">📦 Operations</button>
+</div>
+
+<!-- ═══ TAB 1: SALES ═══ -->
+<div class="tab-content active" id="tab-sales">
+  <div class="kpi-grid" id="salesKPIs"></div>
+  <div class="charts-grid">
+    <div class="chart-box full"><div class="chart-title">Revenue &amp; Orders Trend (Monthly)</div><div id="chartRevOrders"></div></div>
+    <div class="chart-box"><div class="chart-title">Top 10 Products by Revenue</div><div id="chartTopProducts"></div></div>
+    <div class="chart-box"><div class="chart-title">Revenue by Category</div><div id="chartCatDonut"></div></div>
+    <div class="chart-box"><div class="chart-title">Revenue by Channel</div><div id="chartChannelBar"></div></div>
+    <div class="chart-box"><div class="chart-title">Revenue by State</div><div id="chartStateTable"></div></div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">✦ AI Insight</div>
+    <div class="insight-text" id="salesInsight"></div>
+  </div>
+</div>
+
+<!-- ═══ TAB 2: ECOMMERCE ═══ -->
+<div class="tab-content" id="tab-ecom">
+  <div class="kpi-grid" id="ecomKPIs"></div>
+  <div class="charts-grid">
+    <div class="chart-box"><div class="chart-title">Conversion Funnel</div><div id="chartFunnel"></div></div>
+    <div class="chart-box"><div class="chart-title">Customer Segments</div><div id="chartSegDonut"></div></div>
+    <div class="chart-box full"><div class="chart-title">Channel Performance</div><div id="chartChannelPerf"></div></div>
+    <div class="chart-box"><div class="chart-title">Monthly Traffic Trend</div><div id="chartTrafficTrend"></div></div>
+    <div class="chart-box"><div class="chart-title">New vs Returning Customers</div><div id="chartNewReturn"></div></div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">✦ AI Insight</div>
+    <div class="insight-text" id="ecomInsight"></div>
+  </div>
+</div>
+
+<!-- ═══ TAB 3: OPERATIONS ═══ -->
+<div class="tab-content" id="tab-ops">
+  <div class="kpi-grid" id="opsKPIs"></div>
+  <div class="charts-grid">
+    <div class="chart-box"><div class="chart-title">Inventory by Warehouse &amp; Category</div><div id="chartInventoryWH"></div></div>
+    <div class="chart-box"><div class="chart-title">Return Rate Trend (Monthly)</div><div id="chartReturnTrend"></div></div>
+    <div class="chart-box"><div class="chart-title">Stock Cover Days by Category</div><div id="chartStockCover"></div></div>
+    <div class="chart-box"><div class="chart-title">Top 5 Returned Products</div><div id="chartTopReturns"></div></div>
+    <div class="chart-box full"><div class="chart-title">Warehouse Performance</div><div id="chartWHPerf"></div></div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">✦ AI Insight</div>
+    <div class="insight-text" id="opsInsight"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  CommerceIQ &copy; 2024 &mdash; Built with Python, Plotly &amp; Pandas &nbsp;|&nbsp;
+  <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   DATA GENERATION (mirrors Python generate_data.py — seed-aligned)
+   ═══════════════════════════════════════════════════════════════════ */
+
+// Seeded PRNG (Mulberry32)
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t^=t+Math.imul(t^t>>>7,61|t);return((t^t>>>14)>>>0)/4294967296}}
+const rng=mulberry32(42);
+function randInt(a,b){return a+Math.floor(rng()*(b-a))}
+function randChoice(arr){return arr[randInt(0,arr.length)]}
+function randFloat(a,b){return a+rng()*(b-a)}
+
+const CITIES=['Mumbai','Delhi','Bangalore','Hyderabad','Chennai','Kolkata','Pune','Ahmedabad','Jaipur','Lucknow','Surat','Nagpur'];
+const CITY_STATE={'Mumbai':'Maharashtra','Delhi':'Delhi','Bangalore':'Karnataka','Hyderabad':'Telangana','Chennai':'Tamil Nadu','Kolkata':'West Bengal','Pune':'Maharashtra','Ahmedabad':'Gujarat','Jaipur':'Rajasthan','Lucknow':'Uttar Pradesh','Surat':'Gujarat','Nagpur':'Maharashtra'};
+const SEGMENTS=['B2C','B2B','Enterprise'];
+const SEG_W=[0.60,0.30,0.10];
+const CHANNELS=['Online','Marketplace','InStore'];
+const CHAN_W=[0.50,0.35,0.15];
+const STATUSES=['Delivered','Returned','Pending'];
+const STAT_W=[0.80,0.12,0.08];
+const WAREHOUSES=['WH-North','WH-South','WH-East','WH-West'];
+const RETURN_REASONS=['Defective','Wrong Size','Changed Mind','Damaged','Not as Expected'];
+const CATEGORIES=['Electronics','Apparel','Home','Sports','Beauty'];
+const CAT_RETURN={Electronics:0.15,Apparel:0.10,Home:0.05,Sports:0.05,Beauty:0.05};
+
+function weightedChoice(items,weights){
+  const r=rng();let cum=0;
+  for(let i=0;i<items.length;i++){cum+=weights[i];if(r<cum)return items[i]}
+  return items[items.length-1];
+}
+
+// Products
+const PRODUCT_NAMES={
+  Electronics:['Wireless Earbuds','Smartphone Case','USB-C Hub','Bluetooth Speaker','Power Bank 20000mAh','LED Desk Lamp','Webcam HD','Mechanical Keyboard','Portable SSD 1TB','Smart Watch Band'],
+  Apparel:['Cotton Kurta','Denim Jeans','Polo T-Shirt','Running Shorts','Formal Blazer','Silk Saree','Winter Jacket','Linen Shirt','Track Pants','Cotton Dupatta'],
+  Home:['Stainless Steel Bottle','Ceramic Mug Set','Bedsheet 300TC','Wall Clock Wooden','Scented Candle Set','Cushion Cover Pack','Kitchen Organizer','Door Mat Coir','Table Lamp Brass','Photo Frame Set'],
+  Sports:['Yoga Mat 6mm','Resistance Bands Set','Cricket Bat Kashmir','Badminton Racquet','Dumbbell 5kg Pair','Skipping Rope','Football Size 5','Cycling Gloves','Gym Bag 40L','Swim Goggles'],
+  Beauty:['Face Serum Vitamin C','Sunscreen SPF50','Hair Oil Argan','Lipstick Matte Set','Face Wash Neem','Body Lotion 400ml','Nail Polish Kit','Eye Cream Anti-Age','Sheet Mask Pack','Perfume 100ml']
+};
+
+let products=[];
+let pid=1;
+for(const cat of CATEGORIES){
+  for(const name of PRODUCT_NAMES[cat]){
+    const price=cat==='Electronics'?Math.round(randFloat(2000,8000)*100)/100:Math.round(randFloat(300,2500)*100)/100;
+    products.push({ProductID:'PROD-'+String(pid).padStart(3,'0'),Name:name,Category:cat,Price:price,Cost:Math.round(price*0.6*100)/100,Stock:randInt(0,501),ReorderLevel:50});
+    pid++;
+  }
+}
+
+// Customers
+let customers=[];
+for(let i=0;i<500;i++){
+  const city=randChoice(CITIES);
+  customers.push({CustomerID:'CUST-'+String(i+1).padStart(4,'0'),City:city,State:CITY_STATE[city],Segment:weightedChoice(SEGMENTS,SEG_W)});
+}
+
+// Orders
+function genOrderDate(){
+  const monthW=[1,1,1,1,1,1,1,1,1,1.4,1.4,1.4];
+  const total=monthW.reduce((a,b)=>a+b,0);
+  const norm=monthW.map(w=>w/total);
+  const m=weightedChoice([0,1,2,3,4,5,6,7,8,9,10,11],norm);
+  const daysInMonth=[31,29,31,30,31,30,31,31,30,31,30,31];
+  const d=randInt(1,daysInMonth[m]+1);
+  return new Date(2024,m,d);
+}
+
+let orders=[];
+for(let i=0;i<5000;i++){
+  const dt=genOrderDate();
+  orders.push({
+    OrderID:'ORD-'+String(i+1).padStart(5,'0'),
+    CustomerID:randChoice(customers).CustomerID,
+    OrderDate:dt,
+    Month:dt.getMonth(),
+    Channel:weightedChoice(CHANNELS,CHAN_W),
+    Status:weightedChoice(STATUSES,STAT_W)
+  });
+}
+
+// Order Items
+let orderItems=[];
+const prodMap={};products.forEach(p=>{prodMap[p.ProductID]=p});
+for(const ord of orders){
+  const n=randInt(1,5);
+  const chosen=[];
+  while(chosen.length<n){const p=randChoice(products);if(!chosen.find(c=>c.ProductID===p.ProductID))chosen.push(p)}
+  for(const p of chosen){
+    const qty=randInt(1,6);
+    const disc=Math.round(randFloat(0,0.20)*100)/100;
+    orderItems.push({OrderID:ord.OrderID,ProductID:p.ProductID,Category:p.Category,ProductName:p.Name,Quantity:qty,UnitPrice:p.Price,Discount:disc,Revenue:qty*p.Price*(1-disc)});
+  }
+}
+
+// Operations
+let operations=[];
+for(const ord of orders){
+  const items=orderItems.filter(i=>i.OrderID===ord.OrderID);
+  const cats=items.map(i=>i.Category);
+  const catCount={};cats.forEach(c=>{catCount[c]=(catCount[c]||0)+1});
+  let domCat='Home';let maxC=0;for(const c in catCount){if(catCount[c]>maxC){maxC=catCount[c];domCat=c}}
+  const shipDelay=randInt(1,4);
+  const transit=randInt(1,8);
+  const delDays=shipDelay+transit;
+  const retProb=CAT_RETURN[domCat]||0.05;
+  const retFlag=rng()<retProb?1:0;
+  operations.push({
+    OrderID:ord.OrderID,Warehouse:randChoice(WAREHOUSES),
+    DeliveryDays:delDays,OnTime:delDays<=5?1:0,
+    ReturnFlag:retFlag,ReturnReason:retFlag?randChoice(RETURN_REASONS):''
+  });
+}
+
+// Build lookup maps
+const orderMap={};orders.forEach(o=>{orderMap[o.OrderID]=o});
+const opsMap={};operations.forEach(o=>{opsMap[o.OrderID]=o});
+
+/* ═══════════════════════════════════════════════════════════════════
+   FILTERING ENGINE
+   ═══════════════════════════════════════════════════════════════════ */
+function getFilteredOrders(){
+  const dp=document.getElementById('filterDate').value;
+  const ch=document.getElementById('filterChannel').value;
+  const sg=document.getElementById('filterSegment').value;
+  const custSeg={};customers.forEach(c=>{custSeg[c.CustomerID]=c.Segment});
+
+  return orders.filter(o=>{
+    // Date filter
+    if(dp==='Q1'&&(o.Month<0||o.Month>2))return false;
+    if(dp==='Q2'&&(o.Month<3||o.Month>5))return false;
+    if(dp==='Q3'&&(o.Month<6||o.Month>8))return false;
+    if(dp==='Q4'&&(o.Month<9||o.Month>11))return false;
+    if(dp==='L30'){const dec1=new Date(2024,11,1);if(o.OrderDate<dec1)return false}
+    // Channel filter
+    if(ch!=='all'&&o.Channel!==ch)return false;
+    // Segment filter
+    if(sg!=='all'&&custSeg[o.CustomerID]!==sg)return false;
+    return true;
+  });
+}
+
+function getFilteredItems(filteredOrders){
+  const ids=new Set(filteredOrders.map(o=>o.OrderID));
+  return orderItems.filter(i=>ids.has(i.OrderID));
+}
+
+function getFilteredOps(filteredOrders){
+  const ids=new Set(filteredOrders.map(o=>o.OrderID));
+  return operations.filter(o=>ids.has(o.OrderID));
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   UTILITY
+   ═══════════════════════════════════════════════════════════════════ */
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const plotLayout={paper_bgcolor:'#1e293b',plot_bgcolor:'#1e293b',font:{color:'#f1f5f9',family:'Inter'},margin:{l:50,r:30,t:20,b:40},legend:{bgcolor:'transparent',font:{size:11}}};
+const plotConfig={displayModeBar:false,responsive:true};
+
+function fmt(n){
+  if(n>=10000000)return '₹'+( n/10000000).toFixed(2)+' Cr';
+  if(n>=100000)return '₹'+(n/100000).toFixed(2)+' L';
+  return '₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0});
+}
+function fmtK(n){return n>=1000?(n/1000).toFixed(1)+'K':n.toString()}
+function pct(n){return n.toFixed(1)+'%'}
+
+function makeKPI(label,value,sub,cls){
+  return `<div class="kpi-card ${cls}"><div class="kpi-label">${label}</div><div class="kpi-value">${value}</div><div class="kpi-sub">${sub}</div></div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MAIN RENDER
+   ═══════════════════════════════════════════════════════════════════ */
+function applyFilters(){
+  const fo=getFilteredOrders();
+  const fi=getFilteredItems(fo);
+  const fops=getFilteredOps(fo);
+  renderSales(fo,fi,fops);
+  renderEcom(fo,fi);
+  renderOps(fo,fi,fops);
+}
+
+/* ─── TAB 1: SALES ─── */
+function renderSales(fo,fi,fops){
+  const totalRev=fi.reduce((s,i)=>s+i.Revenue,0);
+  const totalOrders=fo.length;
+  const totalCost=fi.reduce((s,i)=>s+i.Quantity*prodMap[i.ProductID].Cost*(1-i.Discount),0);
+  const grossProfit=totalRev-totalCost;
+  const profitMargin=totalRev>0?(grossProfit/totalRev)*100:0;
+  const aov=totalOrders>0?totalRev/totalOrders:0;
+  const target=80000000;
+  const ytd=Math.min((totalRev/target)*100,100);
+
+  document.getElementById('salesKPIs').innerHTML=[
+    makeKPI('Total Revenue',fmt(totalRev),'Gross merchandise value','accent'),
+    makeKPI('Total Orders',fmtK(totalOrders),'Filtered period',''),
+    makeKPI('Gross Profit',fmt(grossProfit),'Revenue minus COGS','green'),
+    makeKPI('Profit Margin',pct(profitMargin),profitMargin>30?'✓ On target':'⚠ Below target',profitMargin>30?'green':'amber'),
+    makeKPI('Avg Order Value',fmt(aov),'Per order average',''),
+    makeKPI('YTD Achievement',pct(ytd),ytd>=80?'✓ On track':'⚠ Needs attention',ytd>=80?'green':'amber'),
+  ].join('');
+
+  // Revenue & Orders by month
+  const monthRev=new Array(12).fill(0);
+  const monthOrd=new Array(12).fill(0);
+  fo.forEach(o=>{monthOrd[o.Month]++});
+  fi.forEach(i=>{const m=orderMap[i.OrderID]?.Month;if(m!=null)monthRev[m]+=i.Revenue});
+
+  Plotly.newPlot('chartRevOrders',[
+    {x:MONTHS,y:monthRev,type:'scatter',mode:'lines+markers',name:'Revenue (₹)',line:{color:'#06b6d4',width:3},marker:{size:6},yaxis:'y'},
+    {x:MONTHS,y:monthOrd,type:'bar',name:'Orders',marker:{color:'rgba(6,182,212,0.2)'},yaxis:'y2'}
+  ],{...plotLayout,yaxis:{title:'Revenue (₹)',titlefont:{size:11},gridcolor:'#334155',tickformat:'.2s',separatethousands:true},yaxis2:{title:'Orders',titlefont:{size:11},overlaying:'y',side:'right',gridcolor:'transparent'},margin:{l:65,r:55,t:10,b:40}},plotConfig);
+
+  // Top 10 Products
+  const prodRev={};fi.forEach(i=>{prodRev[i.ProductName]=(prodRev[i.ProductName]||0)+i.Revenue});
+  const sorted=Object.entries(prodRev).sort((a,b)=>b[1]-a[1]).slice(0,10).reverse();
+  Plotly.newPlot('chartTopProducts',[{
+    y:sorted.map(s=>s[0]),x:sorted.map(s=>s[1]),type:'bar',orientation:'h',
+    marker:{color:'#06b6d4'},text:sorted.map(s=>fmt(s[1])),textposition:'outside',textfont:{size:10,color:'#94a3b8'}
+  }],{...plotLayout,margin:{l:160,r:70,t:10,b:30},xaxis:{gridcolor:'#334155'},yaxis:{automargin:true}},plotConfig);
+
+  // Category donut
+  const catRev={};fi.forEach(i=>{catRev[i.Category]=(catRev[i.Category]||0)+i.Revenue});
+  const catColors=['#06b6d4','#a78bfa','#10b981','#f59e0b','#ef4444'];
+  Plotly.newPlot('chartCatDonut',[{
+    labels:Object.keys(catRev),values:Object.values(catRev),type:'pie',hole:0.55,
+    marker:{colors:catColors},textinfo:'label+percent',textfont:{size:11},
+    hovertemplate:'%{label}: ₹%{value:,.0f}<extra></extra>'
+  }],{...plotLayout,showlegend:false,margin:{l:20,r:20,t:10,b:10}},plotConfig);
+
+  // Channel bar
+  const chanRev={};fi.forEach(i=>{const ch=orderMap[i.OrderID]?.Channel;if(ch)chanRev[ch]=(chanRev[ch]||0)+i.Revenue});
+  Plotly.newPlot('chartChannelBar',[{
+    x:Object.keys(chanRev),y:Object.values(chanRev),type:'bar',
+    marker:{color:['#06b6d4','#a78bfa','#10b981']},
+    text:Object.values(chanRev).map(v=>fmt(v)),textposition:'outside',textfont:{size:11,color:'#94a3b8'}
+  }],{...plotLayout,yaxis:{gridcolor:'#334155',tickformat:',.0f'},margin:{...plotLayout.margin,t:10}},plotConfig);
+
+  // State table
+  const stateRev={};fi.forEach(i=>{
+    const cid=orderMap[i.OrderID]?.CustomerID;
+    const c=customers.find(cc=>cc.CustomerID===cid);
+    if(c)stateRev[c.State]=(stateRev[c.State]||0)+i.Revenue;
+  });
+  const stSorted=Object.entries(stateRev).sort((a,b)=>b[1]-a[1]);
+  let tbl='<table class="data-table"><thead><tr><th>State</th><th>Revenue</th><th>Share</th></tr></thead><tbody>';
+  stSorted.forEach(([st,rev])=>{
+    const share=(rev/totalRev*100).toFixed(1);
+    tbl+=`<tr><td>${st}</td><td>${fmt(rev)}</td><td>${share}%</td></tr>`;
+  });
+  tbl+='</tbody></table>';
+  document.getElementById('chartStateTable').innerHTML=tbl;
+
+  // Insight
+  const topCat=Object.entries(catRev).sort((a,b)=>b[1]-a[1])[0];
+  const topCatShare=(topCat[1]/totalRev*100).toFixed(0);
+  const q4Rev=fi.filter(i=>{const m=orderMap[i.OrderID]?.Month;return m>=9}).reduce((s,i)=>s+i.Revenue,0);
+  const q4Share=(q4Rev/totalRev*100).toFixed(0);
+  document.getElementById('salesInsight').innerHTML=
+    `<strong>${topCat[0]}</strong> drove <strong>${topCatShare}%</strong> of total revenue in the selected period. `+
+    `Q4 festive season contributed <strong>${q4Share}%</strong> of annual sales, validating the seasonal uplift model. `+
+    `Average order value stands at <strong>${fmt(aov)}</strong>, with Online channel leading acquisition volume. `+
+    `Profit margin of <strong>${pct(profitMargin)}</strong> ${profitMargin>30?'indicates healthy unit economics.':'suggests scope for cost optimisation.'}`;
+}
+
+/* ─── TAB 2: E-COMMERCE ─── */
+function renderEcom(fo,fi){
+  const totalOrders=fo.length;
+  // Simulated funnel metrics (realistic e-commerce ratios)
+  const sessions=Math.round(totalOrders*18);
+  const addToCart=Math.round(sessions*0.42);
+  const checkout=Math.round(addToCart*0.60);
+  const purchases=totalOrders;
+  const convRate=(purchases/sessions*100);
+  const cartAband=((addToCart-purchases)/addToCart*100);
+
+  // Simulated marketing channels
+  const chanData={
+    'Google Ads':{sessions:Math.round(sessions*0.30),rev:0,orders:0},
+    'Meta Ads':{sessions:Math.round(sessions*0.22),rev:0,orders:0},
+    'Email':{sessions:Math.round(sessions*0.15),rev:0,orders:0},
+    'Organic':{sessions:Math.round(sessions*0.20),rev:0,orders:0},
+    'Marketplace':{sessions:Math.round(sessions*0.13),rev:0,orders:0}
+  };
+  // Distribute orders/revenue by channel
+  const chanKeys=Object.keys(chanData);
+  const totalRev=fi.reduce((s,i)=>s+i.Revenue,0);
+  const revShares=[0.28,0.24,0.12,0.22,0.14];
+  const ordShares=[0.27,0.23,0.14,0.21,0.15];
+  chanKeys.forEach((k,idx)=>{chanData[k].rev=totalRev*revShares[idx];chanData[k].orders=Math.round(totalOrders*ordShares[idx])});
+
+  const blendedROAS=totalRev/(totalRev*0.12); // 12% ad spend
+
+  document.getElementById('ecomKPIs').innerHTML=[
+    makeKPI('Sessions',fmtK(sessions),'Total website visits','accent'),
+    makeKPI('Conversion Rate',pct(convRate),'Session to purchase','green'),
+    makeKPI('Cart Abandonment',pct(cartAband),cartAband<70?'✓ Healthy':'⚠ High drop-off',cartAband<70?'green':'amber'),
+    makeKPI('Blended ROAS',blendedROAS.toFixed(1)+'x','Return on ad spend','green'),
+  ].join('');
+
+  // Funnel
+  Plotly.newPlot('chartFunnel',[{
+    type:'funnel',y:['Sessions','Add to Cart','Checkout','Purchase'],
+    x:[sessions,addToCart,checkout,purchases],
+    textinfo:'value+percent initial',
+    marker:{color:['#06b6d4','#22d3ee','#10b981','#a78bfa']},
+    connector:{line:{color:'#334155'}},
+    textfont:{color:'#f1f5f9',size:12}
+  }],{...plotLayout,margin:{l:110,r:30,t:10,b:10},funnelmode:'stack'},plotConfig);
+
+  // Segment donut
+  const segCount={};customers.forEach(c=>{segCount[c.Segment]=(segCount[c.Segment]||0)+1});
+  Plotly.newPlot('chartSegDonut',[{
+    labels:Object.keys(segCount),values:Object.values(segCount),type:'pie',hole:0.55,
+    marker:{colors:['#06b6d4','#a78bfa','#10b981']},textinfo:'label+percent',textfont:{size:12}
+  }],{...plotLayout,showlegend:false,margin:{l:20,r:20,t:10,b:10}},plotConfig);
+
+  // Channel performance table
+  let ctbl='<table class="data-table"><thead><tr><th>Channel</th><th>Sessions</th><th>Revenue</th><th>Conv%</th><th>ROAS</th></tr></thead><tbody>';
+  chanKeys.forEach(k=>{
+    const d=chanData[k];
+    const cv=(d.orders/d.sessions*100);
+    const spend=d.rev*0.12;
+    const roas=d.rev/spend;
+    ctbl+=`<tr><td>${k}</td><td>${fmtK(d.sessions)}</td><td>${fmt(d.rev)}</td><td class="${cv>3?'status-good':'status-warn'}">${pct(cv)}</td><td class="${roas>5?'status-good':'status-warn'}">${roas.toFixed(1)}x</td></tr>`;
+  });
+  ctbl+='</tbody></table>';
+  document.getElementById('chartChannelPerf').innerHTML=ctbl;
+
+  // Traffic trend
+  const monthSess=new Array(12).fill(0);
+  fo.forEach(o=>{monthSess[o.Month]+=28});
+  Plotly.newPlot('chartTrafficTrend',[{
+    x:MONTHS,y:monthSess,type:'scatter',mode:'lines+markers',
+    line:{color:'#a78bfa',width:3},marker:{size:6},fill:'tozeroy',fillcolor:'rgba(167,139,250,0.1)'
+  }],{...plotLayout,yaxis:{gridcolor:'#334155'},margin:{...plotLayout.margin,t:10}},plotConfig);
+
+  // New vs Returning
+  const custFirstOrder={};fo.forEach(o=>{if(!custFirstOrder[o.CustomerID]||o.OrderDate<custFirstOrder[o.CustomerID])custFirstOrder[o.CustomerID]=o.OrderDate});
+  const monthNew=new Array(12).fill(0);const monthRet=new Array(12).fill(0);
+  const custSeen={};
+  const sortedOrders=[...fo].sort((a,b)=>a.OrderDate-b.OrderDate);
+  sortedOrders.forEach(o=>{
+    if(!custSeen[o.CustomerID]){monthNew[o.Month]++;custSeen[o.CustomerID]=true}
+    else{monthRet[o.Month]++}
+  });
+  Plotly.newPlot('chartNewReturn',[
+    {x:MONTHS,y:monthNew,type:'bar',name:'New',marker:{color:'#06b6d4'}},
+    {x:MONTHS,y:monthRet,type:'bar',name:'Returning',marker:{color:'#a78bfa'}}
+  ],{...plotLayout,barmode:'group',yaxis:{gridcolor:'#334155'},margin:{...plotLayout.margin,t:10}},plotConfig);
+
+  // Insight
+  const topChan=chanKeys.reduce((a,b)=>chanData[a].rev>chanData[b].rev?a:b);
+  document.getElementById('ecomInsight').innerHTML=
+    `Conversion rate of <strong>${pct(convRate)}</strong> is ${convRate>3?'above':'below'} industry average for Indian e-commerce. `+
+    `<strong>${topChan}</strong> delivers the highest revenue share, accounting for <strong>${(chanData[topChan].rev/totalRev*100).toFixed(0)}%</strong> of total sales. `+
+    `Cart abandonment at <strong>${pct(cartAband)}</strong> ${cartAband<70?'is well-controlled':'indicates optimization opportunity in checkout flow'}. `+
+    `Blended ROAS of <strong>${blendedROAS.toFixed(1)}x</strong> shows strong marketing efficiency across channels.`;
+}
+
+/* ─── TAB 3: OPERATIONS ─── */
+function renderOps(fo,fi,fops){
+  const avgDel=fops.reduce((s,o)=>s+o.DeliveryDays,0)/fops.length;
+  const onTime=(fops.filter(o=>o.OnTime===1).length/fops.length*100);
+  const retRate=(fops.filter(o=>o.ReturnFlag===1).length/fops.length*100);
+  const stockouts=products.filter(p=>p.Stock<=0).length;
+
+  document.getElementById('opsKPIs').innerHTML=[
+    makeKPI('Avg Delivery Days',avgDel.toFixed(1)+' days','Ship + transit time',avgDel<=5?'green':'amber'),
+    makeKPI('On-Time Rate',pct(onTime),onTime>=70?'✓ Acceptable':'✗ Needs improvement',onTime>=70?'green':'red'),
+    makeKPI('Return Rate',pct(retRate),retRate<=10?'✓ Within target':'⚠ Above threshold',retRate<=10?'green':'amber'),
+    makeKPI('Stockout Count',stockouts+' SKUs',stockouts===0?'✓ All stocked':'⚠ Replenishment needed',stockouts===0?'green':'red'),
+  ].join('');
+
+  // Inventory by warehouse & category
+  const whCatStock={};WAREHOUSES.forEach(w=>{whCatStock[w]={};CATEGORIES.forEach(c=>{whCatStock[w][c]=0})});
+  products.forEach(p=>{const wh=randChoice(WAREHOUSES);whCatStock[wh][p.Category]+=p.Stock});
+  const invTraces=CATEGORIES.map((cat,i)=>({
+    x:WAREHOUSES,y:WAREHOUSES.map(w=>whCatStock[w][cat]),type:'bar',name:cat,
+    marker:{color:['#06b6d4','#a78bfa','#10b981','#f59e0b','#ef4444'][i]}
+  }));
+  Plotly.newPlot('chartInventoryWH',invTraces,{...plotLayout,barmode:'group',yaxis:{gridcolor:'#334155',title:'Units'},margin:{...plotLayout.margin,t:10},legend:{orientation:'h',y:-0.2}},plotConfig);
+
+  // Return rate trend
+  const monthRet=new Array(12).fill(0);const monthTotal=new Array(12).fill(0);
+  fops.forEach(o=>{const m=orderMap[o.OrderID]?.Month;if(m!=null){monthTotal[m]++;if(o.ReturnFlag===1)monthRet[m]++}});
+  const monthRetRate=MONTHS.map((_,i)=>monthTotal[i]>0?(monthRet[i]/monthTotal[i]*100):0);
+  Plotly.newPlot('chartReturnTrend',[{
+    x:MONTHS,y:monthRetRate,type:'scatter',mode:'lines+markers',
+    line:{color:'#ef4444',width:3},marker:{size:7,color:'#ef4444'},
+    fill:'tozeroy',fillcolor:'rgba(239,68,68,0.08)'
+  }],{...plotLayout,yaxis:{gridcolor:'#334155',title:'Return Rate %',range:[0,Math.max(...monthRetRate)*1.5]},margin:{...plotLayout.margin,t:10}},plotConfig);
+
+  // Stock cover days
+  const catDailySales={};CATEGORIES.forEach(c=>{catDailySales[c]=0});
+  fi.forEach(i=>{catDailySales[i.Category]+=i.Quantity});
+  const daysCovered=365;
+  const catStock={};CATEGORIES.forEach(c=>{catStock[c]=0});
+  products.forEach(p=>{catStock[p.Category]+=p.Stock});
+  const coverDays=CATEGORIES.map(c=>{const daily=catDailySales[c]/daysCovered;return daily>0?Math.round(catStock[c]/daily):0});
+  Plotly.newPlot('chartStockCover',[{
+    x:CATEGORIES,y:coverDays,type:'bar',
+    marker:{color:coverDays.map(d=>d>14?'#10b981':d>7?'#f59e0b':'#ef4444')},
+    text:coverDays.map(d=>d+' days'),textposition:'outside',textfont:{size:11,color:'#94a3b8'}
+  }],{...plotLayout,yaxis:{gridcolor:'#334155',title:'Days of Stock Cover'},margin:{...plotLayout.margin,t:10}},plotConfig);
+
+  // Top 5 returned products
+  const retByProd={};fops.filter(o=>o.ReturnFlag===1).forEach(o=>{
+    const items=orderItems.filter(i=>i.OrderID===o.OrderID);
+    items.forEach(i=>{
+      if(!retByProd[i.ProductName])retByProd[i.ProductName]={count:0,reasons:{}};
+      retByProd[i.ProductName].count++;
+      const reason=o.ReturnReason||'Unknown';
+      retByProd[i.ProductName].reasons[reason]=(retByProd[i.ProductName].reasons[reason]||0)+1;
+    });
+  });
+  const topRet=Object.entries(retByProd).sort((a,b)=>b[1].count-a[1].count).slice(0,5);
+  let rtbl='<table class="data-table"><thead><tr><th>Product</th><th>Returns</th><th>Top Reason</th></tr></thead><tbody>';
+  topRet.forEach(([name,data])=>{
+    const topReason=Object.entries(data.reasons).sort((a,b)=>b[1]-a[1])[0];
+    rtbl+=`<tr><td>${name}</td><td class="status-bad">${data.count}</td><td>${topReason?topReason[0]:'-'}</td></tr>`;
+  });
+  rtbl+='</tbody></table>';
+  document.getElementById('chartTopReturns').innerHTML=rtbl;
+
+  // Warehouse performance
+  const whPerf={};WAREHOUSES.forEach(w=>{whPerf[w]={delDays:[],onTime:0,total:0}});
+  fops.forEach(o=>{const w=o.Warehouse;whPerf[w].delDays.push(o.DeliveryDays);whPerf[w].total++;if(o.OnTime)whPerf[w].onTime++});
+  let wtbl='<table class="data-table"><thead><tr><th>Warehouse</th><th>Orders</th><th>Avg Delivery</th><th>On-Time %</th><th>Status</th></tr></thead><tbody>';
+  WAREHOUSES.forEach(w=>{
+    const p=whPerf[w];
+    const avg=p.delDays.length>0?(p.delDays.reduce((a,b)=>a+b,0)/p.delDays.length):0;
+    const otp=p.total>0?(p.onTime/p.total*100):0;
+    const cls=otp>=50?'status-good':otp>=35?'status-warn':'status-bad';
+    const icon=otp>=50?'✓':otp>=35?'⚠':'✗';
+    wtbl+=`<tr><td>${w}</td><td>${p.total}</td><td>${avg.toFixed(1)} days</td><td class="${cls}">${pct(otp)}</td><td class="${cls}">${icon}</td></tr>`;
+  });
+  wtbl+='</tbody></table>';
+  document.getElementById('chartWHPerf').innerHTML=wtbl;
+
+  // Insight
+  const bestWH=WAREHOUSES.reduce((a,b)=>{
+    const ra=whPerf[a].total>0?whPerf[a].onTime/whPerf[a].total:0;
+    const rb=whPerf[b].total>0?whPerf[b].onTime/whPerf[b].total:0;
+    return ra>rb?a:b;
+  });
+  const bestWHOTP=(whPerf[bestWH].onTime/whPerf[bestWH].total*100).toFixed(1);
+  document.getElementById('opsInsight').innerHTML=
+    `Average delivery time is <strong>${avgDel.toFixed(1)} days</strong>, with <strong>${pct(onTime)}</strong> orders arriving within the 5-day SLA. `+
+    `<strong>${bestWH}</strong> leads warehouse performance at <strong>${bestWHOTP}%</strong> on-time delivery. `+
+    `Overall return rate of <strong>${pct(retRate)}</strong> is ${retRate<=10?'within acceptable limits':'above the 10% threshold — category-level investigation recommended'}. `+
+    `${stockouts>0?`<strong>${stockouts} SKU(s)</strong> are currently stocked out and require immediate replenishment.`:'All SKUs are in stock — no replenishment alerts.'}`;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TABS & CLOCK
+   ═══════════════════════════════════════════════════════════════════ */
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.toggle('active',t.id==='tab-'+tab));
+}
+
+function updateClock(){
+  const now=new Date();
+  const opts={weekday:'short',year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true};
+  document.getElementById('liveClock').textContent=now.toLocaleString('en-IN',opts);
+}
+setInterval(updateClock,1000);updateClock();
+
+// Initial render
+applyFilters();
+</script>
+</body>
+</html>
